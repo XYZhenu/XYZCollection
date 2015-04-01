@@ -134,6 +134,8 @@
 #define ColorButtonLogIn ColorMaker(255.0,87.0,119.0)
 #define ColorBackGroundGray ColorMaker(210.0,210.0,210.0)
 
+//#define ColorBlue OXColor(@"17b6ed")
+
 #define ColorCoverViewBg [UIColor colorWithRed:0.0 green:0.0  blue:0.0  alpha:0.7]
 
 
@@ -151,6 +153,9 @@
  */
 #define LoadNib(__CLASS__) [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([__CLASS__ class]) owner:nil options:nil] lastObject]
 #define LoadXib(__NAME__) [[[NSBundle mainBundle] loadNibNamed:__NAME__ owner:nil options:nil] lastObject]
+
+
+
 
 
 #endif

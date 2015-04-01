@@ -18,6 +18,9 @@
 #import "NSFileManager+Category.h"
 #import "NSString+Category.h"
 #import "NSDate+Category.h"
+#import "NSData+Encryption.h"
+
+
 
 #import "UIColor+Category.h"
 
@@ -48,6 +51,7 @@
 #import "XYZSelectionIndicater.h"//选择指示器
 
 #import "XYZSelfCustomButton.h"
+#import "XYZButton.h"
 
 #import "XYZTimerAnimateView.h"
 #import "XYZImageScrollView.h"//轮播图
@@ -58,5 +62,20 @@
 #import "XYZInPutBar.h"//自动根据键盘调整自己的高度，自带屏蔽层
 #import "XYZSearchDisplayView.h"//搜索展示
 
+#import "XYZPickerView.h"//选择器
 
+
+#import "XYZNetWork.h"
+
+
+
+
+/**
+ *  tableview
+ */
+#import "XYZTableViewCell.h"
+#import "XYZImageCell.h"
+#import "XYZTextCell.h"
+#import "XYZCellManager.h"
+#import "XYZCellModel.h"
 #endif

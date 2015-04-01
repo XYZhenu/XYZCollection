@@ -59,7 +59,7 @@
         if ([imageArray[i] isKindOfClass:[NSString class]]) {
             NSString* str = imageArray[i];
             if ([str rangeOfString:@"://"].location!=NSNotFound) {
-                [XYZToolsCommon loadImage:str complete:^(UIImage *image) {
+                [XYZNetWork loadImage:str complete:^(UIImage *image) {
                     BTN.xyzImage=image;
                 }];
                 //                [BTN xyzImageWithURL:str];

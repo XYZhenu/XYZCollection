@@ -80,7 +80,7 @@
         }
     }
     for (int i=0; i<number-1; i++) {
-        UIView* view= [XYZToolsCommon separaterOriginX:(i+1)*width Y:(self.xyzHeight-separterHeight)/2 H:separterHeight];
+        UIView* view= [UIView xyzSeparaterX:(i+1)*width Y:(self.xyzHeight-separterHeight)/2 H:separterHeight];
         view.tag=i+300;
         [self addSubview:view];
     }

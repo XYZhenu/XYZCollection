@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 郜路阳. All rights reserved.
 //
 
-#import "XYZCustomUI.h"
+#import "XYZInPutBar.h"
 #import "AppDelegate.h"
 @interface XYZInPutBar (){
     CGSize __bounds;
@@ -37,7 +37,7 @@
     _sendBtn=[UIButton buttonWithType:UIButtonTypeCustom];
     [_sendBtn setTitle:@"发送" forState:UIControlStateNormal];
     [_sendBtn setFrame:CGRectMake(260, 5, 55, 34)];
-    [_sendBtn setTitleColor:ColorBlue forState:UIControlStateNormal];
+    [_sendBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     _sendBtn.backgroundColor=[UIColor whiteColor];
     [_sendBtn addTarget:self action:@selector(sendBtnPress) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_sendBtn];
@@ -63,7 +63,13 @@
     if (self) {
         
         
-        maskButton = [XYZToolsCommon buttonMaskWithFrame:vc.view.bounds color:ColorCoverViewBg target:self func:@selector(maskButtonClick) tag:3];
+        maskButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        maskButton.frame = vc.view.bounds;
+        [maskButton setBackgroundColor:ColorCoverViewBg];
+        [maskButton addTarget:self action:@selector(maskButtonClick) forControlEvents:UIControlEventTouchDown];
+        maskButton.tag = 3;
+        
+        
         [vc.view addSubview:maskButton];
         
         
