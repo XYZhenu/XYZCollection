@@ -37,5 +37,6 @@
 -(void)xyzSetBoundsWidth:(float)width Height:(float)height;
 -(void)xyzSetCenterX:(float)X Y:(float)Y;
 
--(void)setSeparaterLeft:(CGFloat)left right:(CGFloat)right top:(CGFloat)top bottom:(CGFloat)bottom;
+
+-(CGFloat)xyz_Y2_InWindow;
 @end

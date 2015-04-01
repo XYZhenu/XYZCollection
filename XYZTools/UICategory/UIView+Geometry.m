@@ -140,6 +140,10 @@
 }
 
 
-
+-(CGFloat)xyz_Y2_InWindow{
+    UIWindow* window = Application.delegate.window;
+    CGPoint point =[window convertPoint:CGPointZero toView:self];
+    return  -point.y+self.xyzHeight;
+}
 @end
 
