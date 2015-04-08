@@ -85,6 +85,11 @@
 		106245CD1ACBF278002DE098 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 106245A71ACBF278002DE098 /* UIWebView+AFNetworking.m */; };
 		106245D01ACBF2DF002DE098 /* NSData+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 106245CF1ACBF2DF002DE098 /* NSData+Encryption.m */; };
 		106245D41ACBF5DE002DE098 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 106245D31ACBF5DE002DE098 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		106C548C1AD36CAD0097D173 /* GCDCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 106C548B1AD36CAD0097D173 /* GCDCollection.m */; };
+		106C548F1AD37FAA0097D173 /* NSThreadCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 106C548E1AD37FAA0097D173 /* NSThreadCollection.m */; };
+		106C54921AD383280097D173 /* NSOpertionCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 106C54911AD383280097D173 /* NSOpertionCollection.m */; };
+		106C54951AD383390097D173 /* LockCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 106C54941AD383390097D173 /* LockCollection.m */; };
+		106C549B1AD391C80097D173 /* RunTimeCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 106C549A1AD391C80097D173 /* RunTimeCollection.m */; };
 		10B8B35B1ACA7E3600D5DA49 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B8B35A1ACA7E3600D5DA49 /* main.m */; };
 		10B8B35E1ACA7E3600D5DA49 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B8B35D1ACA7E3600D5DA49 /* AppDelegate.m */; };
 		10B8B3611ACA7E3600D5DA49 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B8B3601ACA7E3600D5DA49 /* ViewController.m */; };
@@ -270,6 +275,16 @@
 		106245CF1ACBF2DF002DE098 /* NSData+Encryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Encryption.m"; sourceTree = "<group>"; };
 		106245D21ACBF5DE002DE098 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		106245D31ACBF5DE002DE098 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		106C548A1AD36CAD0097D173 /* GCDCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDCollection.h; sourceTree = "<group>"; };
+		106C548B1AD36CAD0097D173 /* GCDCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDCollection.m; sourceTree = "<group>"; };
+		106C548D1AD37FAA0097D173 /* NSThreadCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSThreadCollection.h; sourceTree = "<group>"; };
+		106C548E1AD37FAA0097D173 /* NSThreadCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSThreadCollection.m; sourceTree = "<group>"; };
+		106C54901AD383280097D173 /* NSOpertionCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSOpertionCollection.h; sourceTree = "<group>"; };
+		106C54911AD383280097D173 /* NSOpertionCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSOpertionCollection.m; sourceTree = "<group>"; };
+		106C54931AD383390097D173 /* LockCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LockCollection.h; sourceTree = "<group>"; };
+		106C54941AD383390097D173 /* LockCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LockCollection.m; sourceTree = "<group>"; };
+		106C54991AD391C80097D173 /* RunTimeCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunTimeCollection.h; sourceTree = "<group>"; };
+		106C549A1AD391C80097D173 /* RunTimeCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunTimeCollection.m; sourceTree = "<group>"; };
 		10B8B3551ACA7E3600D5DA49 /* XYZCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XYZCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10B8B3591ACA7E3600D5DA49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10B8B35A1ACA7E3600D5DA49 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -519,6 +534,30 @@
 			path = JSONKit;
 			sourceTree = "<group>";
 		};
+		106C54871AD36C840097D173 /* mutiThread */ = {
+			isa = PBXGroup;
+			children = (
+				106C548A1AD36CAD0097D173 /* GCDCollection.h */,
+				106C548B1AD36CAD0097D173 /* GCDCollection.m */,
+				106C548D1AD37FAA0097D173 /* NSThreadCollection.h */,
+				106C548E1AD37FAA0097D173 /* NSThreadCollection.m */,
+				106C54901AD383280097D173 /* NSOpertionCollection.h */,
+				106C54911AD383280097D173 /* NSOpertionCollection.m */,
+				106C54931AD383390097D173 /* LockCollection.h */,
+				106C54941AD383390097D173 /* LockCollection.m */,
+			);
+			path = mutiThread;
+			sourceTree = "<group>";
+		};
+		106C54961AD391B10097D173 /* RunTime */ = {
+			isa = PBXGroup;
+			children = (
+				106C54991AD391C80097D173 /* RunTimeCollection.h */,
+				106C549A1AD391C80097D173 /* RunTimeCollection.m */,
+			);
+			path = RunTime;
+			sourceTree = "<group>";
+		};
 		10B8B34C1ACA7E3600D5DA49 = {
 			isa = PBXGroup;
 			children = (
@@ -583,6 +622,8 @@
 		10B8B37E1ACA7F0A00D5DA49 /* XYZTools */ = {
 			isa = PBXGroup;
 			children = (
+				106C54961AD391B10097D173 /* RunTime */,
+				106C54871AD36C840097D173 /* mutiThread */,
 				106245271ACBF137002DE098 /* BaseViewControllers */,
 				10B8B3AD1ACAEF3D00D5DA49 /* FoundationCategory */,
 				10B8B3951ACA82FD00D5DA49 /* Others */,
@@ -872,6 +913,7 @@
 				106245B01ACBF278002DE098 /* AFURLSessionManager.m in Sources */,
 				106245111ACBEAF4002DE098 /* XYZSelectionIndicater.m in Sources */,
 				106245B51ACBF278002DE098 /* UIView+FirstResponderNotify.m in Sources */,
+				106C548F1AD37FAA0097D173 /* NSThreadCollection.m in Sources */,
 				106245BE1ACBF278002DE098 /* QBAssetsCollectionOverlayView.m in Sources */,
 				106245361ACBF151002DE098 /* XYZCellModel.m in Sources */,
 				10B8B3A41ACAA55200D5DA49 /* UIView+Line.m in Sources */,
@@ -897,12 +939,16 @@
 				106245D01ACBF2DF002DE098 /* NSData+Encryption.m in Sources */,
 				106245171ACBEE78002DE098 /* XYZImageTimerScroll.m in Sources */,
 				106245391ACBF22F002DE098 /* XYZNetWork.m in Sources */,
+				106C548C1AD36CAD0097D173 /* GCDCollection.m in Sources */,
 				10B8B3A81ACAE3E800D5DA49 /* UIView+Accessory.m in Sources */,
 				106245C01ACBF278002DE098 /* QBAssetsCollectionViewCell.m in Sources */,
 				106245B81ACBF278002DE098 /* KVNProgress.m in Sources */,
 				106245C21ACBF278002DE098 /* QBAssetsCollectionViewLayout.m in Sources */,
+				106C549B1AD391C80097D173 /* RunTimeCollection.m in Sources */,
 				106245A81ACBF278002DE098 /* AFHTTPRequestOperation.m in Sources */,
+				106C54921AD383280097D173 /* NSOpertionCollection.m in Sources */,
 				106245AA1ACBF278002DE098 /* AFHTTPSessionManager.m in Sources */,
+				106C54951AD383390097D173 /* LockCollection.m in Sources */,
 				106245251ACBF0CA002DE098 /* XYZImageCell.m in Sources */,
 				106245261ACBF0CA002DE098 /* XYZTextCell.m in Sources */,
 				106244E71ACBAB2D002DE098 /* UIImage+Category.m in Sources */,

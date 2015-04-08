@@ -8,11 +8,24 @@
 
 #import "UIView+Accessory.h"
 #import "JSBadgeView.h"
+#import <objc/runtime.h>
 @interface UIView ()
-@property(nonatomic,strong)JSBadgeView*jsBadge;
+@property(nonatomic,weak)JSBadgeView*jsBadge;
 @end
 @implementation UIView (UIViewAccessory)
+static char JSBadge;
 
+
+-(void)setJsBadge:(JSBadgeView *)jsBadge{
+//    [self willChangeValueForKey:<#(NSString *)#>];
+//    [self didChangeValueForKey:<#(NSString *)#>];
+    
+    objc_setAssociatedObject(self, &JSBadge, jsBadge, OBJC_ASSOCIATION_ASSIGN);
+    
+}
+-(JSBadgeView *)jsBadge{
+    return objc_getAssociatedObject(self, &JSBadge);
+}
 - (void)xyzBadgeValueStr:(NSString *)strBadgeValue{
     if (!self.jsBadge) {
         self.jsBadge = [[JSBadgeView alloc] initWithParentView:self alignment:JSBadgeViewAlignmentTopRight];

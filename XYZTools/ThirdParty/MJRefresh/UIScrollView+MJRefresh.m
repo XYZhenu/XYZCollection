@@ -66,7 +66,6 @@ static char MJRefreshFooterViewKey;
         [self addSubview:header];
         self.header = header;
     }
-    
     // 2.设置block回调
     self.header.beginRefreshingCallback = callback;
     
