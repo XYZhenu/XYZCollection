@@ -1,4 +1,2 @@
 1
-sleep=10
-sleeprandom=5
-exit=0
+replace=UILabel<>setText:
