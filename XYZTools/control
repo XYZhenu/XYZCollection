@@ -1,2 +1,2 @@
 1
-replace=UILabel<>setText:
+replace=UILabel<>setText:<>30
