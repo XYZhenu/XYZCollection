@@ -19,10 +19,15 @@
 
 -(UIView *)xyzView{
     if (!_xyzView) {
-        self.xyzView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        self.xyzView = [[UIView alloc] initWithFrame:self.view.frame];
         [self.view addSubview:self.xyzView];
     }
     return _xyzView;
+}
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    self.navigationController.navigationBar.translucent=YES;
+    self.tabBarController.tabBar.translucent=YES;
 }
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];

@@ -45,7 +45,7 @@
     if (bordercolor) {
         self.layer.borderColor=bordercolor.CGColor;
     }else{
-        self.layer.borderColor=ColorSeparateLine.CGColor;
+        self.layer.borderColor=[UIColor grayColor].CGColor;
     }
     self.layer.masksToBounds=YES;
 }

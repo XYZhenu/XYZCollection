@@ -11,6 +11,7 @@
 @interface  UILabel (UILabelResize)
 @property(nonatomic,strong,getter=text)NSString*xyzTextAdjustWidth;
 @property(nonatomic,strong,getter=text)NSString*xyzTextAdjustHeight;
+@property(nonatomic,strong,getter=text)NSString*xyzTextAdjustWidthFromRight;
 
 @property(nonatomic)CGFloat xyzIndention;
 

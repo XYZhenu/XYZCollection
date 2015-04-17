@@ -123,6 +123,7 @@
 /**
  *  所有颜色  必须以Color开头命名
  */
+#define ColorMaker(_R_,_G_,_B_) [UIColor colorWithRed:_R_/255.0 green:_G_/255.0  blue:_B_/255.0  alpha:1]
 
 #define ColorBackGround ColorMaker(239.0,239.0,244.0)
 
@@ -159,5 +160,7 @@
 
 
 
+
+#define PrintFrame XYZLOG(@"%@",NSStringFromCGRect(self.view.frame))
 
 #endif

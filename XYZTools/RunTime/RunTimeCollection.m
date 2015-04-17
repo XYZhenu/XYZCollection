@@ -69,9 +69,6 @@ void getcfunc(id obj,SEL selector,NSInteger num){
 }
 
 
-
-
-
 +(void)method{
     u_int count = 0;
     

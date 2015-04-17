@@ -7,6 +7,7 @@
 //
 
 #import "UILabel+Resize.h"
+#import "UIView+Geometry.h"
 
 @implementation UILabel (UILabelResize)
 -(void)setXyzTextAdjustWidth:(NSString *)xyzTextAdjustWidth{
@@ -19,6 +20,13 @@
     
     self.xyzHeight=height+0.5;
     self.text=xyzTextAdjustHeight;
+}
+-(void)setXyzTextAdjustWidthFromRight:(NSString *)xyzTextAdjustWidthFromRight{
+    CGFloat width = [xyzTextAdjustWidthFromRight sizeWithFont:self.font].width;
+    CGFloat rightX = self.xyzX1;
+    self.xyzWidth=width;
+    self.xyzX1 = rightX;
+    self.text=xyzTextAdjustWidthFromRight;
 }
 
 -(void)setXyzIndention:(CGFloat)xyzIndention

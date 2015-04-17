@@ -26,5 +26,7 @@
 
 +(NSString*)xyzPathCacheOf:(NSString*)interPath;
 +(void)RemoveCachePath:(NSString*)path;
+
++(NSString*)xyzPathDocumentOf:(NSString*)interPath;
 @end
  

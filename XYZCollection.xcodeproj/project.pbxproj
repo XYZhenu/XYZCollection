@@ -90,6 +90,8 @@
 		106C54921AD383280097D173 /* NSOpertionCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 106C54911AD383280097D173 /* NSOpertionCollection.m */; };
 		106C54951AD383390097D173 /* LockCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 106C54941AD383390097D173 /* LockCollection.m */; };
 		106C549B1AD391C80097D173 /* RunTimeCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 106C549A1AD391C80097D173 /* RunTimeCollection.m */; };
+		106C54B31AD4E99E0097D173 /* LocationCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 106C54B21AD4E99E0097D173 /* LocationCollection.m */; };
+		106C54BA1AD51B390097D173 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 106C54B91AD51B390097D173 /* FirstViewController.m */; };
 		10B8B35B1ACA7E3600D5DA49 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B8B35A1ACA7E3600D5DA49 /* main.m */; };
 		10B8B35E1ACA7E3600D5DA49 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B8B35D1ACA7E3600D5DA49 /* AppDelegate.m */; };
 		10B8B3611ACA7E3600D5DA49 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B8B3601ACA7E3600D5DA49 /* ViewController.m */; };
@@ -105,6 +107,10 @@
 		10B8B3A81ACAE3E800D5DA49 /* UIView+Accessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B8B3A71ACAE3E800D5DA49 /* UIView+Accessory.m */; };
 		10B8B3AC1ACAE51100D5DA49 /* JSBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B8B3AB1ACAE51100D5DA49 /* JSBadgeView.m */; };
 		10B8B3B21ACAEF6B00D5DA49 /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B8B3B11ACAEF6B00D5DA49 /* NSString+Category.m */; };
+		10D81F761AE0B52A0076A24D /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D81F711AE0B52A0076A24D /* RECommonFunctions.m */; };
+		10D81F771AE0B52A0076A24D /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D81F731AE0B52A0076A24D /* RESideMenu.m */; };
+		10D81F781AE0B52A0076A24D /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D81F751AE0B52A0076A24D /* UIViewController+RESideMenu.m */; };
+		10D81F7B1AE0B5730076A24D /* LocalNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D81F7A1AE0B5730076A24D /* LocalNotificationManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -285,6 +291,10 @@
 		106C54941AD383390097D173 /* LockCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LockCollection.m; sourceTree = "<group>"; };
 		106C54991AD391C80097D173 /* RunTimeCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunTimeCollection.h; sourceTree = "<group>"; };
 		106C549A1AD391C80097D173 /* RunTimeCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunTimeCollection.m; sourceTree = "<group>"; };
+		106C54B11AD4E99E0097D173 /* LocationCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationCollection.h; sourceTree = "<group>"; };
+		106C54B21AD4E99E0097D173 /* LocationCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationCollection.m; sourceTree = "<group>"; };
+		106C54B81AD51B390097D173 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		106C54B91AD51B390097D173 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		10B8B3551ACA7E3600D5DA49 /* XYZCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XYZCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10B8B3591ACA7E3600D5DA49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10B8B35A1ACA7E3600D5DA49 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -317,6 +327,14 @@
 		10B8B3AB1ACAE51100D5DA49 /* JSBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBadgeView.m; sourceTree = "<group>"; };
 		10B8B3B01ACAEF6B00D5DA49 /* NSString+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Category.h"; sourceTree = "<group>"; };
 		10B8B3B11ACAEF6B00D5DA49 /* NSString+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Category.m"; sourceTree = "<group>"; };
+		10D81F701AE0B52A0076A24D /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
+		10D81F711AE0B52A0076A24D /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
+		10D81F721AE0B52A0076A24D /* RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESideMenu.h; sourceTree = "<group>"; };
+		10D81F731AE0B52A0076A24D /* RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESideMenu.m; sourceTree = "<group>"; };
+		10D81F741AE0B52A0076A24D /* UIViewController+RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RESideMenu.h"; sourceTree = "<group>"; };
+		10D81F751AE0B52A0076A24D /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RESideMenu.m"; sourceTree = "<group>"; };
+		10D81F791AE0B5730076A24D /* LocalNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalNotificationManager.h; sourceTree = "<group>"; };
+		10D81F7A1AE0B5730076A24D /* LocalNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalNotificationManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -558,6 +576,15 @@
 			path = RunTime;
 			sourceTree = "<group>";
 		};
+		106C54AE1AD4E9780097D173 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				106C54B11AD4E99E0097D173 /* LocationCollection.h */,
+				106C54B21AD4E99E0097D173 /* LocationCollection.m */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		10B8B34C1ACA7E3600D5DA49 = {
 			isa = PBXGroup;
 			children = (
@@ -582,6 +609,8 @@
 			children = (
 				10B8B35C1ACA7E3600D5DA49 /* AppDelegate.h */,
 				10B8B35D1ACA7E3600D5DA49 /* AppDelegate.m */,
+				106C54B81AD51B390097D173 /* FirstViewController.h */,
+				106C54B91AD51B390097D173 /* FirstViewController.m */,
 				10B8B35F1ACA7E3600D5DA49 /* ViewController.h */,
 				10B8B3601ACA7E3600D5DA49 /* ViewController.m */,
 				10B8B3621ACA7E3600D5DA49 /* Main.storyboard */,
@@ -622,6 +651,7 @@
 		10B8B37E1ACA7F0A00D5DA49 /* XYZTools */ = {
 			isa = PBXGroup;
 			children = (
+				106C54AE1AD4E9780097D173 /* Location */,
 				106C54961AD391B10097D173 /* RunTime */,
 				106C54871AD36C840097D173 /* mutiThread */,
 				106245271ACBF137002DE098 /* BaseViewControllers */,
@@ -642,6 +672,7 @@
 		10B8B3831ACA80AD00D5DA49 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				10D81F6F1AE0B52A0076A24D /* RESideMenu */,
 				106245D11ACBF5DE002DE098 /* JSONKit */,
 				106245531ACBF277002DE098 /* AFNetworking */,
 				106245671ACBF277002DE098 /* DaiDodgeKeyboard */,
@@ -734,6 +765,8 @@
 		10B8B3921ACA82A200D5DA49 /* ApplePush */ = {
 			isa = PBXGroup;
 			children = (
+				10D81F791AE0B5730076A24D /* LocalNotificationManager.h */,
+				10D81F7A1AE0B5730076A24D /* LocalNotificationManager.m */,
 				10B8B39C1ACA900000D5DA49 /* XYZPush.h */,
 				10B8B39D1ACA900000D5DA49 /* XYZPush.m */,
 			);
@@ -772,6 +805,19 @@
 				106244EC1ACBB8C3002DE098 /* NSFileManager+Category.m */,
 			);
 			path = FoundationCategory;
+			sourceTree = "<group>";
+		};
+		10D81F6F1AE0B52A0076A24D /* RESideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				10D81F701AE0B52A0076A24D /* RECommonFunctions.h */,
+				10D81F711AE0B52A0076A24D /* RECommonFunctions.m */,
+				10D81F721AE0B52A0076A24D /* RESideMenu.h */,
+				10D81F731AE0B52A0076A24D /* RESideMenu.m */,
+				10D81F741AE0B52A0076A24D /* UIViewController+RESideMenu.h */,
+				10D81F751AE0B52A0076A24D /* UIViewController+RESideMenu.m */,
+			);
+			path = RESideMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -894,6 +940,7 @@
 				106245C31ACBF278002DE098 /* QBImagePickerController.m in Sources */,
 				106245521ACBF257002DE098 /* UIView+MJExtension.m in Sources */,
 				106245CA1ACBF278002DE098 /* UIImageView+AFNetworking.m in Sources */,
+				10D81F781AE0B52A0076A24D /* UIViewController+RESideMenu.m in Sources */,
 				106245C51ACBF278002DE098 /* QBImagePickerThumbnailView.m in Sources */,
 				106245D41ACBF5DE002DE098 /* JSONKit.m in Sources */,
 				106245CB1ACBF278002DE098 /* UIProgressView+AFNetworking.m in Sources */,
@@ -926,9 +973,11 @@
 				10B8B35E1ACA7E3600D5DA49 /* AppDelegate.m in Sources */,
 				106245B61ACBF278002DE098 /* UIImage+KVNEmpty.m in Sources */,
 				106245351ACBF151002DE098 /* XYZCellManager.m in Sources */,
+				10D81F761AE0B52A0076A24D /* RECommonFunctions.m in Sources */,
 				106245AE1ACBF278002DE098 /* AFURLRequestSerialization.m in Sources */,
 				106244F61ACBDE93002DE098 /* XYZViewController.m in Sources */,
 				106245CC1ACBF278002DE098 /* UIRefreshControl+AFNetworking.m in Sources */,
+				106C54B31AD4E99E0097D173 /* LocationCollection.m in Sources */,
 				106245AB1ACBF278002DE098 /* AFNetworkReachabilityManager.m in Sources */,
 				10B8B39B1ACA88D100D5DA49 /* XYZAppDelegate.m in Sources */,
 				106245BB1ACBF278002DE098 /* MBProgressHUD.m in Sources */,
@@ -952,6 +1001,7 @@
 				106245251ACBF0CA002DE098 /* XYZImageCell.m in Sources */,
 				106245261ACBF0CA002DE098 /* XYZTextCell.m in Sources */,
 				106244E71ACBAB2D002DE098 /* UIImage+Category.m in Sources */,
+				106C54BA1AD51B390097D173 /* FirstViewController.m in Sources */,
 				106244DE1ACB896A002DE098 /* UILabel+Resize.m in Sources */,
 				106245201ACBF0AB002DE098 /* XYZTableViewCell.m in Sources */,
 				106245B71ACBF278002DE098 /* UIImage+KVNImageEffects.m in Sources */,
@@ -961,7 +1011,9 @@
 				10B8B3AC1ACAE51100D5DA49 /* JSBadgeView.m in Sources */,
 				106245AC1ACBF278002DE098 /* AFSecurityPolicy.m in Sources */,
 				106245A91ACBF278002DE098 /* AFHTTPRequestOperationManager.m in Sources */,
+				10D81F7B1AE0B5730076A24D /* LocalNotificationManager.m in Sources */,
 				106245AD1ACBF278002DE098 /* AFURLConnectionOperation.m in Sources */,
+				10D81F771AE0B52A0076A24D /* RESideMenu.m in Sources */,
 				106245B91ACBF278002DE098 /* KVNProgressConfiguration.m in Sources */,
 				10B8B3A11ACAA18100D5DA49 /* UIView+Geometry.m in Sources */,
 				106245CD1ACBF278002DE098 /* UIWebView+AFNetworking.m in Sources */,

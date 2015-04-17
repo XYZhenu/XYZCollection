@@ -12,4 +12,10 @@
 -(NSString*)xyzDate:(NSString*)formate;
 -(NSString*)xyzDate;
 -(NSString*)xyzTime;
+
++(instancetype)dateWithYear:(int)year Month:(int)month Day:(int)day Hour:(int)hour Minute:(int)minute;
+-(NSDate*)weekDayFromNow:(NSInteger)weekday;
+
+-(NSInteger)weekDay;
+
 @end

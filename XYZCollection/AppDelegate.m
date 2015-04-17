@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "FirstViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,39 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    FirstViewController* vc = [[FirstViewController alloc] init];
+    switch (1) {
+        case 0:{
+            self.window.rootViewController=vc;
+            break;
+        }
+        case 1:{
+            UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
+            self.window.rootViewController=nav;
+            break;
+        }
+        case 2:{
+            UITabBarController* tab = [[UITabBarController alloc] init];
+            tab.viewControllers = @[vc];
+            self.window.rootViewController=tab;
+            break;
+        }
+        case 3:{
+            UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
+            UITabBarController* tab = [[UITabBarController alloc] init];
+            tab.viewControllers = @[nav];
+            self.window.rootViewController=tab;
+            break;
+        }
+            
+        default:
+            break;
+    }
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

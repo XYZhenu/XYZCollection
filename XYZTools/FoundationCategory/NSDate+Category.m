@@ -21,4 +21,40 @@
 -(NSString*)xyzTime{
     return [self xyzDate:@"HH:mm"];
 }
++(instancetype)dateWithYear:(int)year Month:(int)month Day:(int)day Hour:(int)hour Minute:(int)minute{
+    
+    NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
+    NSDateComponents *dateComps = [[NSDateComponents alloc] init];
+    [dateComps setDay:day];
+    [dateComps setMonth:month];
+    [dateComps setYear:year];
+    [dateComps setHour:hour];
+    [dateComps setMinute:minute];
+    [dateComps setSecond:0];
+    return  [calendar dateFromComponents:dateComps];
+}
+-(NSInteger)weekDay{
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *comps = [calendar components:NSWeekdayCalendarUnit fromDate:self];
+    NSInteger nowWeekday = [comps weekday]-1; // 星期几（注意，周日是“1”，周一是“2”。。。。）
+    if (nowWeekday==0) {
+        nowWeekday=7;
+    }
+    return nowWeekday;
+}
+-(NSDate*)weekDayFromNow:(NSInteger)weekday{    
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *comps = [calendar components:NSWeekdayCalendarUnit fromDate:self];
+    NSInteger nowWeekday = [comps weekday]; // 星期几（注意，周日是“1”，周一是“2”。。。。）
+    
+    NSDateComponents * intervalCompo = [[NSDateComponents alloc] init];
+    int interval = weekday - nowWeekday;
+    if (interval<0) {
+        interval+=7;
+    }
+    intervalCompo.day=interval;
+    NSDate* finaldate = [calendar dateByAddingComponents:intervalCompo toDate:self options:NSCalendarWrapComponents];
+    
+    return finaldate;
+}
 @end
