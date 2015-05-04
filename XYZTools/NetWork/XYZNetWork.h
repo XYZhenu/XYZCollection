@@ -33,3 +33,8 @@
 +(void)loadImage:(NSString*) imageUrl complete:(void(^)(UIImage* image))complete placeholder:(UIImage *)pImage  underControl:(BOOL)underControl;
 +(void)loadImage:(NSString*) imageUrl complete:(void(^)(UIImage* image))complete;
 @end
+
+
+
+
+

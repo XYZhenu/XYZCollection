@@ -14,4 +14,8 @@
 
 
 -(UIImage*)xyzScaleToSize:(CGSize)size;
+
+
++(UIImage*)xyzImageContext:(CGRect)rect View:(UIView*)view;
+
 @end

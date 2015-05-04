@@ -92,6 +92,7 @@
 		106C549B1AD391C80097D173 /* RunTimeCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 106C549A1AD391C80097D173 /* RunTimeCollection.m */; };
 		106C54B31AD4E99E0097D173 /* LocationCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 106C54B21AD4E99E0097D173 /* LocationCollection.m */; };
 		106C54BA1AD51B390097D173 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 106C54B91AD51B390097D173 /* FirstViewController.m */; };
+		108066291AF7862500FA07C5 /* ProgressLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 108066281AF7862500FA07C5 /* ProgressLoader.m */; };
 		10B8B35B1ACA7E3600D5DA49 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B8B35A1ACA7E3600D5DA49 /* main.m */; };
 		10B8B35E1ACA7E3600D5DA49 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B8B35D1ACA7E3600D5DA49 /* AppDelegate.m */; };
 		10B8B3611ACA7E3600D5DA49 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B8B3601ACA7E3600D5DA49 /* ViewController.m */; };
@@ -107,6 +108,7 @@
 		10B8B3A81ACAE3E800D5DA49 /* UIView+Accessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B8B3A71ACAE3E800D5DA49 /* UIView+Accessory.m */; };
 		10B8B3AC1ACAE51100D5DA49 /* JSBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B8B3AB1ACAE51100D5DA49 /* JSBadgeView.m */; };
 		10B8B3B21ACAEF6B00D5DA49 /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B8B3B11ACAEF6B00D5DA49 /* NSString+Category.m */; };
+		10CE32F31AE28E560018E4C1 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CE32F21AE28E560018E4C1 /* Photo.m */; };
 		10D81F761AE0B52A0076A24D /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D81F711AE0B52A0076A24D /* RECommonFunctions.m */; };
 		10D81F771AE0B52A0076A24D /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D81F731AE0B52A0076A24D /* RESideMenu.m */; };
 		10D81F781AE0B52A0076A24D /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D81F751AE0B52A0076A24D /* UIViewController+RESideMenu.m */; };
@@ -295,6 +297,8 @@
 		106C54B21AD4E99E0097D173 /* LocationCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationCollection.m; sourceTree = "<group>"; };
 		106C54B81AD51B390097D173 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		106C54B91AD51B390097D173 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		108066271AF7862500FA07C5 /* ProgressLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressLoader.h; sourceTree = "<group>"; };
+		108066281AF7862500FA07C5 /* ProgressLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressLoader.m; sourceTree = "<group>"; };
 		10B8B3551ACA7E3600D5DA49 /* XYZCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XYZCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10B8B3591ACA7E3600D5DA49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10B8B35A1ACA7E3600D5DA49 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -327,6 +331,8 @@
 		10B8B3AB1ACAE51100D5DA49 /* JSBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBadgeView.m; sourceTree = "<group>"; };
 		10B8B3B01ACAEF6B00D5DA49 /* NSString+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Category.h"; sourceTree = "<group>"; };
 		10B8B3B11ACAEF6B00D5DA49 /* NSString+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Category.m"; sourceTree = "<group>"; };
+		10CE32F11AE28E560018E4C1 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		10CE32F21AE28E560018E4C1 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		10D81F701AE0B52A0076A24D /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
 		10D81F711AE0B52A0076A24D /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
 		10D81F721AE0B52A0076A24D /* RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESideMenu.h; sourceTree = "<group>"; };
@@ -689,6 +695,8 @@
 		10B8B3861ACA816800D5DA49 /* UICategory */ = {
 			isa = PBXGroup;
 			children = (
+				10CE32F11AE28E560018E4C1 /* Photo.h */,
+				10CE32F21AE28E560018E4C1 /* Photo.m */,
 				106244E21ACB9E43002DE098 /* UIColor+Category.h */,
 				106244E31ACB9E43002DE098 /* UIColor+Category.m */,
 				106244E51ACBAB2D002DE098 /* UIImage+Category.h */,
@@ -750,6 +758,8 @@
 			children = (
 				106245371ACBF22F002DE098 /* XYZNetWork.h */,
 				106245381ACBF22F002DE098 /* XYZNetWork.m */,
+				108066271AF7862500FA07C5 /* ProgressLoader.h */,
+				108066281AF7862500FA07C5 /* ProgressLoader.m */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -963,8 +973,10 @@
 				106C548F1AD37FAA0097D173 /* NSThreadCollection.m in Sources */,
 				106245BE1ACBF278002DE098 /* QBAssetsCollectionOverlayView.m in Sources */,
 				106245361ACBF151002DE098 /* XYZCellModel.m in Sources */,
+				108066291AF7862500FA07C5 /* ProgressLoader.m in Sources */,
 				10B8B3A41ACAA55200D5DA49 /* UIView+Line.m in Sources */,
 				106245511ACBF257002DE098 /* UIScrollView+MJRefresh.m in Sources */,
+				10CE32F31AE28E560018E4C1 /* Photo.m in Sources */,
 				10B8B39E1ACA900000D5DA49 /* XYZPush.m in Sources */,
 				10B8B3B21ACAEF6B00D5DA49 /* NSString+Category.m in Sources */,
 				1062452E1ACBF137002DE098 /* BaseDetailViewController.m in Sources */,
