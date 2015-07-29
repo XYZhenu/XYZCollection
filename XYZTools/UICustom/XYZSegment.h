@@ -14,11 +14,11 @@
 
 
 
--(instancetype)block_Num:(NSInteger)number 
-                createUI:(void(^)(UIView* theView,NSInteger index))createUI 
-                  layOut:(void(^)(UIView* theView))layOut 
-             selectState:(void(^)(UIView* theView,BOOL selected))selectState 
+-(instancetype)set_Num:(NSInteger)number
+                createUI:(void(^)(XYZView* theView,NSInteger index))createUI 
+                  layOut:(void(^)(XYZView* theView,NSInteger index))layOut
+             selectState:(void(^)(XYZView* theView,BOOL selected))selectState 
                 callBack:(void(^)(NSInteger index))callBack;
 
--(void)selectedIndexWithCallBck:(NSInteger)index;
+-(void)selectedIndexWithCallBack:(NSInteger)index;
 @end

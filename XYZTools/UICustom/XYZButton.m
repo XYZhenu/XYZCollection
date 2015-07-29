@@ -10,10 +10,10 @@
 @interface XYZButton (){
     BOOL _isSelected;
 }
-@property(nonatomic,strong) void (^callBack) (BOOL isSelected,UIView* theView);
-@property(nonatomic,strong) void (^layOut) (UIView* theView);
-@property(nonatomic,strong) void (^touched) (BOOL downOrUp,UIView* theView);
-@property(nonatomic,strong) void (^messageSet) (BOOL isSelected,UIView* theView,id message);
+@property(nonatomic,strong) void (^callBack) (BOOL isSelected,XYZView* theView);
+@property(nonatomic,strong) void (^layOut) (XYZView* theView);
+@property(nonatomic,strong) void (^touched) (BOOL isTouched,XYZView* theView);
+@property(nonatomic,strong) void (^messageSet) (BOOL isSelected,XYZView* theView,id message);
 @end
 @implementation XYZButton
 
@@ -88,11 +88,11 @@
 +(instancetype)new{
     return [[self alloc] init];
 }
--(instancetype)block_customUI:(void(^)(UIView* theView))customUI 
-                     callBack:(void(^)(BOOL isSelected,UIView* theView))callBack 
-                       layOut:(void(^)(UIView* theView))layOut 
-                      touched:(void(^)(BOOL isSelected, UIView* theView))touched 
-                   messgaeSet:(void(^)(BOOL isSelected,UIView* theView,id message))messageSet{
+-(instancetype)set_customUI:(void(^)(XYZView* theView))customUI
+                     layOut:(void(^)(XYZView* theView))layOut
+                   callBack:(void(^)(BOOL isSelected,XYZView* theView))callBack
+                    touched:(void(^)(BOOL isTouched, XYZView* theView))touched
+                 messgaeSet:(void(^)(BOOL isSelected,XYZView* theView,id message))messageSet{
     self.callBack = callBack;
     self.layOut = layOut;
     self.touched = touched;

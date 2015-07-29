@@ -48,7 +48,7 @@
  
  ------该函数设计只能调用一次，多次调用会覆盖前一次，设置messageArray会自动调用-------
  */
--(instancetype)block_createUI:(void(^)(UIView* theView))createUI 
+-(instancetype)set_createUI:(void(^)(UIView* theView))createUI
                        layOut:(void(^)(UIView* theView))layOut 
                 indicatorRect:(CGRect(^)(CGRect bound))indicatorRect
                      callBack:(void(^)(NSInteger index,UIView* theView,id message))callBack 

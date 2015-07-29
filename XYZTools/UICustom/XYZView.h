@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#define View(__TAG__) [theView viewWithTag:__TAG__]
+#define Label(__TAG__) ((UILabel*)[theView viewWithTag:__TAG__])
+#define Image(__TAG__) ((UIImageView*)[theView viewWithTag:__TAG__])
+#define Button(__TAG__) ((UIButton*)[theView viewWithTag:__TAG__])
 @interface XYZView : UIView
 @property(nonatomic,assign)UIEdgeInsets separatorInset;
 @property(nonatomic,assign)CGFloat separatorLineWidth;

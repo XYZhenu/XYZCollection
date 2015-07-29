@@ -397,7 +397,7 @@
 +(instancetype)new{
     return [[self alloc] init];
 }
--(instancetype)block_createUI:(void(^)(UIView* theView))createUI 
+-(instancetype)set_createUI:(void(^)(UIView* theView))createUI
                        layOut:(void(^)(UIView* theView))layOut 
                      callBack:(void(^)(NSInteger index,UIView* theView,id message))callBack 
                    messgaeSet:(void(^)(NSInteger index,UIView* theView,id message))messageSet{

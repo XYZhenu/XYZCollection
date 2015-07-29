@@ -28,9 +28,9 @@
  
  ------该函数设计只能调用一次，多次调用会覆盖前一次，但是customUI设计为不会覆盖任何元素-------
  */
--(instancetype)block_customUI:(void(^)(UIView* theView))customUI 
-                     callBack:(void(^)(BOOL isSelected,UIView* theView))callBack 
-                       layOut:(void(^)(UIView* theView))layOut 
-                      touched:(void(^)(BOOL isSelected, UIView* theView))touched 
-                   messgaeSet:(void(^)(BOOL isSelected,UIView* theView,id message))messageSet;
+-(instancetype)set_customUI:(void(^)(XYZView* theView))customUI
+                       layOut:(void(^)(XYZView* theView))layOut
+                   callBack:(void(^)(BOOL isSelected,XYZView* theView))callBack
+                      touched:(void(^)(BOOL isTouched, XYZView* theView))touched
+                   messgaeSet:(void(^)(BOOL isSelected,XYZView* theView,id message))messageSet;
 @end

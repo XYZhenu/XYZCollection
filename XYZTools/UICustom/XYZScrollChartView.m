@@ -20,8 +20,6 @@
     CGFloat _topHeight;
     CGFloat _leftWidth;
     
-    BOOL _isSet;
-    BOOL _isBuild;
     NSInteger _leftNum;
     NSInteger _topNum;
     
@@ -68,26 +66,40 @@
     return self;
 }
 -(void)prepare{
-    _isSet = NO;
-    _isBuild = NO;
+    _contentArray = [NSMutableArray arrayWithCapacity:5];
+    _tagArray = [NSMutableArray arrayWithCapacity:5];
 }
 
++(instancetype)new{
+    return [[self alloc] init];
+}
 
-
--(instancetype)set_cellHeight:(CGFloat)cellheight cellWidth:(CGFloat)cellwidth topHeight:(CGFloat)topheight leftWidth:(CGFloat)leftWidth topNum:(NSInteger)topNum leftNum:(NSInteger)leftNum{
-    if (_isBuild) {
-        return self;
-    }else{
-        _isBuild = YES;
-    }
+-(instancetype)set_cellHeight:(CGFloat)cellheight
+                    cellWidth:(CGFloat)cellwidth
+                    topHeight:(CGFloat)topheight
+                    leftWidth:(CGFloat)leftWidth
+                       topNum:(NSInteger)topNum
+                      leftNum:(NSInteger)leftNum
+                    buildLeft:(UIView*(^)(CGRect frame))buildLeft
+                     buildTop:(UIView*(^)(CGRect frame))buildTop
+                     buildTag:(void(^)(UIView* view,id content))buildTag
+                     clickTag:(void(^)(UIView* view,id content))clickTag
+               buildLeftLabel:(void(^)(UIView* view,NSInteger index))buildLeftLabel
+                buildTopLabel:(void(^)(UIView* view,NSInteger index))buildTopLabel
+                     getFrame:(CGRect(^)(CGFloat cellWidth,CGFloat cellHeight,CGFloat totalWidth,CGFloat totalHeight,id content))getFrame{
     _cellHeight = cellheight;
     _cellWidth = cellwidth;
     _topHeight = topheight;
     _leftWidth = leftWidth;
     _topNum = topNum;
-    _leftNum = leftNum;    
-    _contentArray = [NSMutableArray arrayWithCapacity:5];
-    _tagArray = [NSMutableArray arrayWithCapacity:5];
+    _leftNum = leftNum;
+    self.getFrame = getFrame;
+    self.buildLeftLabel = buildLeftLabel;
+    self.buildTopLabel = buildTopLabel;
+    self.buildTag = buildTag;
+    self.clickTag = clickTag;
+    self.buildLeft = buildLeft;
+    self.buildTop = buildTop;
     [self buildInterface];
     return self;
 }
@@ -106,6 +118,16 @@
 }
 #define ColorClear [UIColor clearColor]
 -(void)buildInterface{
+    for (UIView* view in self.subviews) {
+        if (view!=self) {
+            [view removeFromSuperview];
+        }
+    }
+    _titleScroll = nil;
+    _leftScroll = nil;
+    _rightScroll = nil;
+    
+    
 
     _titleScroll = [[UIScrollView alloc] init];
     _titleScroll.contentSize = CGSizeMake(_topNum*_cellWidth,0);
@@ -276,34 +298,5 @@
     }
 }
 
-
-
-
--(instancetype)block_getFrame:(CGRect(^)(CGFloat cellWidth,CGFloat cellHeight,CGFloat totalWidth,CGFloat totalHeight,id content))getFrame 
-       buildLeftLabel:(void(^)(UIView* view,NSInteger index))buildLeftLabel 
-        buildTopLabel:(void(^)(UIView* view,NSInteger index))buildTopLabel 
-             buildTag:(void(^)(UIView* view,id content))buildTag 
-             clickTag:(void(^)(UIView* view,id content))clickTag
-            buildLeft:(UIView*(^)(CGRect frame))buildLeft 
-             buildTop:(UIView*(^)(CGRect frame))buildTop
-{
-    if (_isSet) {
-        return self;
-    }else{
-        _isSet=YES;
-    }
-    
-    self.getFrame = getFrame;
-    self.buildLeftLabel = buildLeftLabel;
-    self.buildTopLabel = buildTopLabel;
-    self.buildTag = buildTag;
-    self.clickTag = clickTag;
-    self.buildLeft = buildLeft;
-    self.buildTop = buildTop;
-    [self clear];
-    [self createTopLabel];
-    [self createLeftLabel];
-    return self;
-}
 
 @end

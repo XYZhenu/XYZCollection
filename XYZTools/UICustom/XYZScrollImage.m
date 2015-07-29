@@ -38,7 +38,7 @@
     _scrollInset = UIEdgeInsetsZero;
     _pageInset = UIEdgeInsetsZero;
     __weak typeof(self)weakSelf = self;
-    self.scroll = [[XYZScroll new] block_createUI:^(UIView *theView) {
+    self.scroll = [[XYZScroll new] set_createUI:^(UIView *theView) {
         UIView* imageview = [[UIImageView alloc] init];
         imageview.tag = 100;
         [theView addSubview:imageview];

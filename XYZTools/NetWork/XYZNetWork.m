@@ -76,7 +76,7 @@
         hideHUD();
         failed(reason);
     } netFailed:^(NSString *error) {
-        [UIAlertView pushAlert:NetFailed];
+        [UIAlert pushAlert:NetFailed];
         hideHUD();
     }];
 }

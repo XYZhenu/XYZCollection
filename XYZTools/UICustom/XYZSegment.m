@@ -10,9 +10,9 @@
 @interface XYZSegment (){
     NSMutableArray* _cellArray;
 }
-@property(nonatomic,strong)void(^createUI)(UIView* theView,NSInteger index);
-@property(nonatomic,strong)void(^layOut)(UIView* theView);
-@property(nonatomic,strong)void(^selectState)(UIView* theView,BOOL selected);
+@property(nonatomic,strong)void(^createUI)(XYZView* theView,NSInteger index);
+@property(nonatomic,strong)void(^layOut)(XYZView* theView,NSInteger index);
+@property(nonatomic,strong)void(^selectState)(XYZView* theView,BOOL selected);
 @property(nonatomic,strong)void(^callBack)(NSInteger index);
 @end
 @implementation XYZSegment
@@ -56,13 +56,13 @@
         UIView* view = _cellArray[i];
         view.frame = CGRectMake(i*width, 0, width, self.frame.size.height);
         
-        UIView* button = [view viewWithTag:ButtonTag];
+        UIView* button = [view viewWithTag:ButtonTag+i];
         button.frame = view.bounds;
     }
     if (self.layOut) {
         for (int i=0; i<_cellArray.count; i++) {
-            UIView* view = _cellArray[i];
-            self.layOut(view);
+            XYZView* view = _cellArray[i];
+            self.layOut(view,i);
         }
     }
 }
@@ -74,7 +74,11 @@
 +(instancetype)new{
     return [[self alloc] init];
 }
--(instancetype)block_Num:(NSInteger)number createUI:(void(^)(UIView* theView,NSInteger index))createUI layOut:(void(^)(UIView* theView))layOut selectState:(void(^)(UIView* theView,BOOL selected))selectState callBack:(void(^)(NSInteger index))callBack{
+-(instancetype)set_Num:(NSInteger)number
+                createUI:(void(^)(XYZView* theView,NSInteger index))createUI
+                  layOut:(void(^)(XYZView* theView,NSInteger index))layOut
+             selectState:(void(^)(XYZView* theView,BOOL selected))selectState
+                callBack:(void(^)(NSInteger index))callBack{
     
     
     NSAssert(number>1, @"最少两个");
@@ -94,7 +98,7 @@
     CGFloat width = self.frame.size.width/number;
     
     for (int i=0; i<number; i++) {
-        UIView* view = [[XYZView alloc] initWithFrame:CGRectMake(i*width, 0, width, self.frame.size.height)];
+        XYZView* view = [[XYZView alloc] initWithFrame:CGRectMake(i*width, 0, width, self.frame.size.height)];
         self.createUI(view,i);
         [self addSubview:view];
         
@@ -113,6 +117,18 @@
             self.createUI(_cellArray[i],i);
         }
     }
+    
+    
+    if (self.selectState) {
+        for (int i=0; i<_cellArray.count; i++) {
+            if (i==self.selectedIndex) {
+                self.selectState(_cellArray[i],YES);
+            }else{
+                self.selectState(_cellArray[i],NO);
+            }
+        }
+    }
+    
     [self setNeedsLayout];
     return self;
 }
@@ -130,9 +146,11 @@
 
 
 -(void)setSelectedIndex:(NSInteger)selectedIndex{
+    
     if (_selectedIndex==selectedIndex || (selectedIndex<0) || (selectedIndex >= _cellArray.count)) {
         return;
     }
+    _selectedIndex = selectedIndex;
     if (self.selectState) {
         for (int i=0; i<_cellArray.count; i++) {
             if (i==selectedIndex) {
@@ -144,7 +162,7 @@
     }
 }
 
--(void)selectedIndexWithCallBck:(NSInteger)index{
+-(void)selectedIndexWithCallBack:(NSInteger)index{
     self.selectedIndex = index;
     if (self.callBack) {
         self.callBack(index);
