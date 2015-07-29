@@ -233,7 +233,7 @@ defaultImageName:(NSString*)imageName
         
 //        progrss.progressTintColor = ColorBlue;
         
-        progrss.frame=CGRectMake(0, cover.xyzHeight/2, cover.xyzWidth, 2);
+        progrss.frame=CGRectMake(0, cover.height/2, cover.width, 2);
         
         progrss.tag = ProgressTag+1;
         

@@ -23,7 +23,8 @@
 //
 //+(void)HttpRequestWithUrl:(NSString*)url parmater:(NSDictionary*)parmaDic succeed:(void(^)(NSDictionary* responseDic))succeed failed:(void(^)(NSString* reason))failed netFailed:(void(^)(NSString *error))netFailed HUDInViewWithAlert:(UIView*)view;
 
-
++(void)HttpRequestWithUrl:(NSString*)url ConstructParmater:(NSDictionary*(^)())constructor succeed:(void(^)(NSDictionary* responseDic))succeed failed:(void(^)(NSString* reason))failed netFailed:(void(^)(NSString *error))netFailed HUDInView:(UIView*)view;
++(void)HttpRequestWithUrl:(NSString*)url ConstructParmater:(NSDictionary*(^)())constructor succeed:(void(^)(NSDictionary* responseDic))succeed failed:(void(^)(NSString* reason))failed HUDInView:(UIView*)view;
 
 
 

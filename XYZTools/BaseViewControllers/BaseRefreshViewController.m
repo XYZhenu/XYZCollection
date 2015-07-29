@@ -86,10 +86,10 @@
             [self.tableView headerEndRefreshing];
         } failed:^(NSString *reason) {
             [self.tableView headerEndRefreshing];
-            [UIAlertView pushAlert:reason];
+            [UIAlert pushAlert:reason];
         } netFailed:^(NSString *error) {
             [self.tableView headerEndRefreshing];
-            [UIAlertView pushAlert:NetFailed];
+            [UIAlert pushAlert:NetFailed];
         } HUDInView:self.view];
         
         
@@ -125,10 +125,10 @@
             [self.tableView headerEndRefreshing];
         } failed:^(NSString *reason) {
             [self.tableView headerEndRefreshing];
-            [UIAlertView pushAlert:reason];
+            [UIAlert pushAlert:reason];
         } netFailed:^(NSString *error) {
             [self.tableView headerEndRefreshing];
-            [UIAlertView pushAlert:NetFailed];
+            [UIAlert pushAlert:NetFailed];
         } HUDInView:self.view];
     }
     
@@ -170,7 +170,7 @@
 -(void)loadMore{
     self.currentPage++;
     if (self.parmaDic[@"page"]) {
-        self.parmaDic[@"page"]=[NSString stringWithFormat:@"%d",self.currentPage];
+        self.parmaDic[@"page"]=[NSString stringWithFormat:@"%ld",(long)self.currentPage];
     }
     
 //    NSString* filename = [XYZToolsCommon getFilePath:[self.cacheName stringByAppendingFormat:@"%d",self.currentPage]];
@@ -235,7 +235,7 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSDictionary*data = self.ModelRect[indexPath.section][indexPath.row];
-    return [XYZCellManager CellHeightHeight:data Width:self.view.xyzWidth];
+    return [XYZCellManager CellHeightHeight:data Width:self.view.width];
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 0.001;

@@ -12,20 +12,20 @@
 @implementation UILabel (UILabelResize)
 -(void)setXyzTextAdjustWidth:(NSString *)xyzTextAdjustWidth{
     CGFloat width = [xyzTextAdjustWidth sizeWithFont:self.font].width;
-    self.xyzWidth=width;
+    self.width=width;
     self.text=xyzTextAdjustWidth;
 }
 -(void)setXyzTextAdjustHeight:(NSString *)xyzTextAdjustHeight{
-    CGFloat height = [xyzTextAdjustHeight sizeWithFont:self.font constrainedToSize:CGSizeMake(self.xyzWidth,MAXFLOAT)].height;
+    CGFloat height = [xyzTextAdjustHeight sizeWithFont:self.font constrainedToSize:CGSizeMake(self.width,MAXFLOAT)].height;
     
-    self.xyzHeight=height+0.5;
+    self.height=height+0.5;
     self.text=xyzTextAdjustHeight;
 }
 -(void)setXyzTextAdjustWidthFromRight:(NSString *)xyzTextAdjustWidthFromRight{
     CGFloat width = [xyzTextAdjustWidthFromRight sizeWithFont:self.font].width;
-    CGFloat rightX = self.xyzX1;
-    self.xyzWidth=width;
-    self.xyzX1 = rightX;
+    CGFloat rightX = self.right;
+    self.width=width;
+    self.right = rightX;
     self.text=xyzTextAdjustWidthFromRight;
 }
 
@@ -42,7 +42,7 @@
     
     self.attributedText = attributedString;
     
-    self.xyzHeight = [self.text sizeWithAttributes:@{NSParagraphStyleAttributeName:paragraphStyle,NSFontAttributeName:self.font,NSViewSizeDocumentAttribute:[NSValue valueWithCGSize:CGSizeMake(self.xyzWidth, MAXFLOAT)]}].height+2;
+    self.height = [self.text sizeWithAttributes:@{NSParagraphStyleAttributeName:paragraphStyle,NSFontAttributeName:self.font,NSViewSizeDocumentAttribute:[NSValue valueWithCGSize:CGSizeMake(self.width, MAXFLOAT)]}].height+2;
 }
 -(CGFloat)xyzIndention{
     return 0;
@@ -50,9 +50,9 @@
 -(void)xyzResizeParagraphStyle:(NSMutableParagraphStyle*(^)(NSMutableParagraphStyle*))paragraph{
     
     NSMutableParagraphStyle *paragraphStyle = paragraph([[ NSMutableParagraphStyle alloc ] init ]);
-    self.attributedText = [[NSAttributedString alloc] initWithString:self.text attributes:@{NSParagraphStyleAttributeName:paragraphStyle,NSViewSizeDocumentAttribute:[NSValue valueWithCGSize:CGSizeMake(self.xyzWidth, MAXFLOAT)]}];
+    self.attributedText = [[NSAttributedString alloc] initWithString:self.text attributes:@{NSParagraphStyleAttributeName:paragraphStyle,NSViewSizeDocumentAttribute:[NSValue valueWithCGSize:CGSizeMake(self.width, MAXFLOAT)]}];
     
-    self.xyzHeight = [self.attributedText size].height+0.5;
+    self.height = [self.attributedText size].height+0.5;
 }
 
 

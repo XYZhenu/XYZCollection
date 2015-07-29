@@ -47,7 +47,7 @@
     if (self.widthForCompo) {
         return self.widthForCompo(component);
     }else{
-        return self.xyzWidth/_componum;
+        return self.width/_componum;
     }
 }
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{

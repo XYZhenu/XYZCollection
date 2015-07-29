@@ -22,8 +22,6 @@
 #define Device [UIDevice currentDevice]
 #define NotificationCenter [NSNotificationCenter defaultCenter]
 
-//#define XYZLOG NSLog(@"\n\n||||||||||  FILE      %s\n\n----------  FUNCTION  %s\n\n^^^^^^^^^^  LINE      %d\n\n",__FILE__,__FUNCTION__,__LINE__);NSLog
-
 
 #define XYZLOG(...) NSLog(@"\n\n||||||||||  FILE      %s\n\n----------  FUNCTION  %s\n\n^^^^^^^^^^  LINE      %d\n\n",__FILE__,__FUNCTION__,__LINE__);NSLog(__VA_ARGS__);
 /**

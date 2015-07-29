@@ -104,6 +104,58 @@
 }
 
 
++(void)HttpRequestWithUrl:(NSString*)url ConstructParmater:(NSDictionary*(^)())constructor succeed:(void(^)(NSDictionary* responseDic))succeed failed:(void(^)(NSString* reason))failed netFailed:(void(^)(NSString *error))netFailed HUDInView:(UIView*)view{
+    BOOL useKVN = NO;
+    void(^hideHUD)();
+    if (useKVN) {
+        [KVNProgress show];
+        hideHUD=^{[KVNProgress dismiss];};
+    }else{
+        [MBProgressHUD showHUDAddedTo:view animated:YES];
+        hideHUD=^{[MBProgressHUD hideHUDForView:view animated:YES];};
+    }
+    NSDictionary*dic = constructor();
+    [self HttpRequestWithUrl:url parmater:dic succeed:^(NSDictionary *responseDic) {
+        succeed(responseDic);
+        hideHUD();
+    } failed:^(NSString *reason) {
+        failed(reason);
+        hideHUD();
+    } netFailed:^(NSString *error) {
+        netFailed(error);
+        hideHUD();
+    }];
+}
++(void)HttpRequestWithUrl:(NSString*)url ConstructParmater:(NSDictionary*(^)())constructor succeed:(void(^)(NSDictionary* responseDic))succeed failed:(void(^)(NSString* reason))failed HUDInView:(UIView*)view{
+    
+    BOOL useKVN = NO;
+    void(^hideHUD)();
+    if (useKVN) {
+        [KVNProgress show];
+        hideHUD=^{[KVNProgress dismiss];};
+    }else{
+        [MBProgressHUD showHUDAddedTo:view animated:YES];
+        hideHUD=^{[MBProgressHUD hideHUDForView:view animated:YES];};
+    }
+    NSDictionary*dic = constructor();
+    [self HttpRequestWithUrl:url parmater:dic succeed:^(NSDictionary *responseDic) {
+        succeed(responseDic);
+        hideHUD();
+    } failed:^(NSString *reason) {
+        failed(reason);
+        hideHUD();
+    } netFailed:^(NSString *error) {
+        hideHUD();
+    }];
+}
+
+
+
+
+
+
+
+
 
 
 +(void)loadImage:(NSString*) imageUrl complete:(void(^)(UIImage* image))complete placeholder:(UIImage *)pImage underControl:(BOOL)underControl

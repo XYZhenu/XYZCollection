@@ -41,11 +41,11 @@
     return self;
 }
 -(void)present{
-    self.xyzY=self.view.xyzHeight;
+    self.top=self.view.height;
     [self.view addSubview:self];
     
     [UIView animateWithDuration:0.5 animations:^{
-        self.xyzY=0;
+        self.top=0;
     }];
 }
 -(void)disMiss{
@@ -56,7 +56,7 @@
         self.dismissCallback(nil);
     }
     [UIView animateWithDuration:0.5 animations:^{
-        self.xyzY=self.view.xyzHeight;
+        self.top=self.view.height;
         
     } completion:^(BOOL finished) {
         if (finished) {

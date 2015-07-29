@@ -1,39 +1,36 @@
 //
 //  XYZButton.h
-//  XYZCollection
+//  layout
 //
-//  Created by xieyan on 15/4/1.
+//  Created by xieyan on 15/7/24.
 //  Copyright (c) 2015年 xieyan. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-@protocol XYZButtonDelegate <NSObject>
--(void)XYZButtonCallBack:(BOOL)isSelected tag:(int)tag;
-@end
-@interface XYZButton : UIView
-@property (nonatomic,strong) UIImage           *xyzImage;
-@property (nonatomic,strong) UIImage           *xyzImageSelected;
-@property (nonatomic       ) UIViewContentMode xyzImageContentMode;
-@property(nonatomic)BOOL isSelected;
-@property (nonatomic       ) UIEdgeInsets      xyzInset;
+#import "XYZView.h"
 
+@interface XYZButton : XYZView
+@property(nonatomic,strong)id message;
++(instancetype)new;
+/**
+ *  添加处理block
+ *  ——————————————————都可以传空————————————————
+ 
+   ————————为兼容代码和自动布局，界面frame另外设置，button会通过block：layout自动适配————————
+ 
+ *  @param customUI 增加UI  所有界面元素依靠tag识别  可以与IB混合使用
+ *  @param callBack 处理点击事件 和  处理点击后效果
+ *  @param layOut   处理控件layout  使用frame
+ *  @param touched  处理点击时的状态  如：高亮状态
+ *  @param messageSet  处理收到消息改变button状态  如：更换图片
+ *
+ *  @return 为了代码创建方便，返回自身；    XYZButton* button = [[XYZButton new] block_customUI:nil callBack:nil layOut:nil touched:nil];
 
-- (void)xyzImageWithURL:(NSString *)url;
-- (void)xyzImageWithURL:(NSString *)url
-       placeholderImage:(UIImage *)placeholderImage;
-
-@property (nonatomic       ) float           xyzTitleFont;
-@property (nonatomic,strong) UIColor         *xyzTitleColor;
-@property (nonatomic       ) NSTextAlignment xyzTitleAlignment;
-@property (nonatomic,strong) NSString        *xyzTitleText;
-
-
-@property (nonatomic,weak) id<XYZButtonDelegate>delegate;
-@property(nonatomic,strong)void(^callback)(BOOL isSelected, int tag);
-
-+(instancetype)buttonWithImageWidth:(CGFloat)imageWidth height:(CGFloat)buttonHeight;
-
-+(instancetype)buttonWithFrame:(CGRect)frame callBack:(void(^)(BOOL isSelected, int tag))callBack;
-
-+(instancetype)ButtonCentralContentWithFrame:(CGRect)frame imageWidth:(CGFloat)width;
+ 
+ ------该函数设计只能调用一次，多次调用会覆盖前一次，但是customUI设计为不会覆盖任何元素-------
+ */
+-(instancetype)block_customUI:(void(^)(UIView* theView))customUI 
+                     callBack:(void(^)(BOOL isSelected,UIView* theView))callBack 
+                       layOut:(void(^)(UIView* theView))layOut 
+                      touched:(void(^)(BOOL isSelected, UIView* theView))touched 
+                   messgaeSet:(void(^)(BOOL isSelected,UIView* theView,id message))messageSet;
 @end

@@ -17,16 +17,11 @@
 		106244F31ACBD543002DE098 /* UIViewController+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 106244F21ACBD543002DE098 /* UIViewController+Category.m */; };
 		106244F61ACBDE93002DE098 /* XYZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 106244F51ACBDE93002DE098 /* XYZViewController.m */; };
 		106244F91ACBE4D7002DE098 /* XYZTimerAnimateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 106244F81ACBE4D7002DE098 /* XYZTimerAnimateView.m */; };
-		106244FC1ACBE57D002DE098 /* XYZSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 106244FB1ACBE57D002DE098 /* XYZSwitch.m */; };
-		106244FF1ACBE5BE002DE098 /* XYZSelfCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 106244FE1ACBE5BE002DE098 /* XYZSelfCustomButton.m */; };
 		106245021ACBE63B002DE098 /* XYZAutoResizeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 106245011ACBE63B002DE098 /* XYZAutoResizeView.m */; };
 		106245051ACBE6D8002DE098 /* XYZCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 106245041ACBE6D8002DE098 /* XYZCoverView.m */; };
-		106245081ACBE92D002DE098 /* XYZImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 106245071ACBE92D002DE098 /* XYZImageScrollView.m */; };
 		1062450B1ACBE9B0002DE098 /* XYZInPutBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1062450A1ACBE9B0002DE098 /* XYZInPutBar.m */; };
 		1062450E1ACBEAA4002DE098 /* XYZSearchDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1062450D1ACBEAA4002DE098 /* XYZSearchDisplayView.m */; };
 		106245111ACBEAF4002DE098 /* XYZSelectionIndicater.m in Sources */ = {isa = PBXBuildFile; fileRef = 106245101ACBEAF4002DE098 /* XYZSelectionIndicater.m */; };
-		106245141ACBED67002DE098 /* XYZButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 106245131ACBED67002DE098 /* XYZButton.m */; };
-		106245171ACBEE78002DE098 /* XYZImageTimerScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 106245161ACBEE78002DE098 /* XYZImageTimerScroll.m */; };
 		1062451A1ACBF00D002DE098 /* XYZPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 106245191ACBF00D002DE098 /* XYZPickerView.m */; };
 		106245201ACBF0AB002DE098 /* XYZTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1062451F1ACBF0AB002DE098 /* XYZTableViewCell.m */; };
 		106245251ACBF0CA002DE098 /* XYZImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 106245221ACBF0CA002DE098 /* XYZImageCell.m */; };
@@ -92,6 +87,7 @@
 		106C549B1AD391C80097D173 /* RunTimeCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 106C549A1AD391C80097D173 /* RunTimeCollection.m */; };
 		106C54B31AD4E99E0097D173 /* LocationCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 106C54B21AD4E99E0097D173 /* LocationCollection.m */; };
 		106C54BA1AD51B390097D173 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 106C54B91AD51B390097D173 /* FirstViewController.m */; };
+		107EB8DF1B66386C0008F916 /* XYZView.m in Sources */ = {isa = PBXBuildFile; fileRef = 107EB8DE1B66386C0008F916 /* XYZView.m */; };
 		108066291AF7862500FA07C5 /* ProgressLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 108066281AF7862500FA07C5 /* ProgressLoader.m */; };
 		10B8B35B1ACA7E3600D5DA49 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B8B35A1ACA7E3600D5DA49 /* main.m */; };
 		10B8B35E1ACA7E3600D5DA49 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B8B35D1ACA7E3600D5DA49 /* AppDelegate.m */; };
@@ -108,6 +104,11 @@
 		10B8B3A81ACAE3E800D5DA49 /* UIView+Accessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B8B3A71ACAE3E800D5DA49 /* UIView+Accessory.m */; };
 		10B8B3AC1ACAE51100D5DA49 /* JSBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B8B3AB1ACAE51100D5DA49 /* JSBadgeView.m */; };
 		10B8B3B21ACAEF6B00D5DA49 /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B8B3B11ACAEF6B00D5DA49 /* NSString+Category.m */; };
+		10CA37BA1B64BEED00C8DE96 /* XYZButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CA37B51B64BEED00C8DE96 /* XYZButton.m */; };
+		10CA37BB1B64BEED00C8DE96 /* XYZScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CA37B71B64BEED00C8DE96 /* XYZScroll.m */; };
+		10CA37BC1B64BEED00C8DE96 /* XYZScrollImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CA37B91B64BEED00C8DE96 /* XYZScrollImage.m */; };
+		10CA37BF1B64BF2C00C8DE96 /* XYZScrollChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CA37BE1B64BF2C00C8DE96 /* XYZScrollChartView.m */; };
+		10CA37C51B65C80B00C8DE96 /* XYZSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CA37C41B65C80B00C8DE96 /* XYZSegment.m */; };
 		10CE32F31AE28E560018E4C1 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CE32F21AE28E560018E4C1 /* Photo.m */; };
 		10D81F761AE0B52A0076A24D /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D81F711AE0B52A0076A24D /* RECommonFunctions.m */; };
 		10D81F771AE0B52A0076A24D /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D81F731AE0B52A0076A24D /* RESideMenu.m */; };
@@ -146,26 +147,16 @@
 		106244F51ACBDE93002DE098 /* XYZViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZViewController.m; sourceTree = "<group>"; };
 		106244F71ACBE4D7002DE098 /* XYZTimerAnimateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZTimerAnimateView.h; sourceTree = "<group>"; };
 		106244F81ACBE4D7002DE098 /* XYZTimerAnimateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZTimerAnimateView.m; sourceTree = "<group>"; };
-		106244FA1ACBE57D002DE098 /* XYZSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZSwitch.h; sourceTree = "<group>"; };
-		106244FB1ACBE57D002DE098 /* XYZSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZSwitch.m; sourceTree = "<group>"; };
-		106244FD1ACBE5BE002DE098 /* XYZSelfCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZSelfCustomButton.h; sourceTree = "<group>"; };
-		106244FE1ACBE5BE002DE098 /* XYZSelfCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZSelfCustomButton.m; sourceTree = "<group>"; };
 		106245001ACBE63B002DE098 /* XYZAutoResizeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZAutoResizeView.h; sourceTree = "<group>"; };
 		106245011ACBE63B002DE098 /* XYZAutoResizeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZAutoResizeView.m; sourceTree = "<group>"; };
 		106245031ACBE6D8002DE098 /* XYZCoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZCoverView.h; sourceTree = "<group>"; };
 		106245041ACBE6D8002DE098 /* XYZCoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZCoverView.m; sourceTree = "<group>"; };
-		106245061ACBE92D002DE098 /* XYZImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZImageScrollView.h; sourceTree = "<group>"; };
-		106245071ACBE92D002DE098 /* XYZImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZImageScrollView.m; sourceTree = "<group>"; };
 		106245091ACBE9B0002DE098 /* XYZInPutBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZInPutBar.h; sourceTree = "<group>"; };
 		1062450A1ACBE9B0002DE098 /* XYZInPutBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZInPutBar.m; sourceTree = "<group>"; };
 		1062450C1ACBEAA4002DE098 /* XYZSearchDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZSearchDisplayView.h; sourceTree = "<group>"; };
 		1062450D1ACBEAA4002DE098 /* XYZSearchDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZSearchDisplayView.m; sourceTree = "<group>"; };
 		1062450F1ACBEAF4002DE098 /* XYZSelectionIndicater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZSelectionIndicater.h; sourceTree = "<group>"; };
 		106245101ACBEAF4002DE098 /* XYZSelectionIndicater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZSelectionIndicater.m; sourceTree = "<group>"; };
-		106245121ACBED67002DE098 /* XYZButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZButton.h; sourceTree = "<group>"; };
-		106245131ACBED67002DE098 /* XYZButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZButton.m; sourceTree = "<group>"; };
-		106245151ACBEE78002DE098 /* XYZImageTimerScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZImageTimerScroll.h; sourceTree = "<group>"; };
-		106245161ACBEE78002DE098 /* XYZImageTimerScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZImageTimerScroll.m; sourceTree = "<group>"; };
 		106245181ACBF00D002DE098 /* XYZPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZPickerView.h; sourceTree = "<group>"; };
 		106245191ACBF00D002DE098 /* XYZPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZPickerView.m; sourceTree = "<group>"; };
 		1062451E1ACBF0AB002DE098 /* XYZTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZTableViewCell.h; sourceTree = "<group>"; };
@@ -297,6 +288,8 @@
 		106C54B21AD4E99E0097D173 /* LocationCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationCollection.m; sourceTree = "<group>"; };
 		106C54B81AD51B390097D173 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		106C54B91AD51B390097D173 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		107EB8DD1B66386C0008F916 /* XYZView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZView.h; sourceTree = "<group>"; };
+		107EB8DE1B66386C0008F916 /* XYZView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZView.m; sourceTree = "<group>"; };
 		108066271AF7862500FA07C5 /* ProgressLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressLoader.h; sourceTree = "<group>"; };
 		108066281AF7862500FA07C5 /* ProgressLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressLoader.m; sourceTree = "<group>"; };
 		10B8B3551ACA7E3600D5DA49 /* XYZCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XYZCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -331,6 +324,16 @@
 		10B8B3AB1ACAE51100D5DA49 /* JSBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBadgeView.m; sourceTree = "<group>"; };
 		10B8B3B01ACAEF6B00D5DA49 /* NSString+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Category.h"; sourceTree = "<group>"; };
 		10B8B3B11ACAEF6B00D5DA49 /* NSString+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Category.m"; sourceTree = "<group>"; };
+		10CA37B41B64BEED00C8DE96 /* XYZButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZButton.h; sourceTree = "<group>"; };
+		10CA37B51B64BEED00C8DE96 /* XYZButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZButton.m; sourceTree = "<group>"; };
+		10CA37B61B64BEED00C8DE96 /* XYZScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZScroll.h; sourceTree = "<group>"; };
+		10CA37B71B64BEED00C8DE96 /* XYZScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZScroll.m; sourceTree = "<group>"; };
+		10CA37B81B64BEED00C8DE96 /* XYZScrollImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZScrollImage.h; sourceTree = "<group>"; };
+		10CA37B91B64BEED00C8DE96 /* XYZScrollImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZScrollImage.m; sourceTree = "<group>"; };
+		10CA37BD1B64BF2C00C8DE96 /* XYZScrollChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZScrollChartView.h; sourceTree = "<group>"; };
+		10CA37BE1B64BF2C00C8DE96 /* XYZScrollChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZScrollChartView.m; sourceTree = "<group>"; };
+		10CA37C31B65C80B00C8DE96 /* XYZSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZSegment.h; sourceTree = "<group>"; };
+		10CA37C41B65C80B00C8DE96 /* XYZSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZSegment.m; sourceTree = "<group>"; };
 		10CE32F11AE28E560018E4C1 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		10CE32F21AE28E560018E4C1 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		10D81F701AE0B52A0076A24D /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
@@ -722,21 +725,23 @@
 		10B8B3891ACA817B00D5DA49 /* UICustom */ = {
 			isa = PBXGroup;
 			children = (
+				107EB8DD1B66386C0008F916 /* XYZView.h */,
+				107EB8DE1B66386C0008F916 /* XYZView.m */,
+				10CA37BD1B64BF2C00C8DE96 /* XYZScrollChartView.h */,
+				10CA37BE1B64BF2C00C8DE96 /* XYZScrollChartView.m */,
+				10CA37B41B64BEED00C8DE96 /* XYZButton.h */,
+				10CA37B51B64BEED00C8DE96 /* XYZButton.m */,
+				10CA37B61B64BEED00C8DE96 /* XYZScroll.h */,
+				10CA37B71B64BEED00C8DE96 /* XYZScroll.m */,
+				10CA37B81B64BEED00C8DE96 /* XYZScrollImage.h */,
+				10CA37B91B64BEED00C8DE96 /* XYZScrollImage.m */,
+				10CA37C31B65C80B00C8DE96 /* XYZSegment.h */,
+				10CA37C41B65C80B00C8DE96 /* XYZSegment.m */,
 				1062451B1ACBF095002DE098 /* TableView */,
 				106244F41ACBDE93002DE098 /* XYZViewController.h */,
 				106244F51ACBDE93002DE098 /* XYZViewController.m */,
 				106244F71ACBE4D7002DE098 /* XYZTimerAnimateView.h */,
 				106244F81ACBE4D7002DE098 /* XYZTimerAnimateView.m */,
-				106245061ACBE92D002DE098 /* XYZImageScrollView.h */,
-				106245071ACBE92D002DE098 /* XYZImageScrollView.m */,
-				106245151ACBEE78002DE098 /* XYZImageTimerScroll.h */,
-				106245161ACBEE78002DE098 /* XYZImageTimerScroll.m */,
-				106244FA1ACBE57D002DE098 /* XYZSwitch.h */,
-				106244FB1ACBE57D002DE098 /* XYZSwitch.m */,
-				106244FD1ACBE5BE002DE098 /* XYZSelfCustomButton.h */,
-				106244FE1ACBE5BE002DE098 /* XYZSelfCustomButton.m */,
-				106245121ACBED67002DE098 /* XYZButton.h */,
-				106245131ACBED67002DE098 /* XYZButton.m */,
 				106245001ACBE63B002DE098 /* XYZAutoResizeView.h */,
 				106245011ACBE63B002DE098 /* XYZAutoResizeView.m */,
 				106245031ACBE6D8002DE098 /* XYZCoverView.h */,
@@ -945,8 +950,8 @@
 				1062450B1ACBE9B0002DE098 /* XYZInPutBar.m in Sources */,
 				106245BC1ACBF278002DE098 /* QBAssetsCollectionCheckmarkView.m in Sources */,
 				1062454C1ACBF257002DE098 /* MJRefreshBaseView.m in Sources */,
-				106245081ACBE92D002DE098 /* XYZImageScrollView.m in Sources */,
 				106245C71ACBF278002DE098 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				10CA37BA1B64BEED00C8DE96 /* XYZButton.m in Sources */,
 				106245C31ACBF278002DE098 /* QBImagePickerController.m in Sources */,
 				106245521ACBF257002DE098 /* UIView+MJExtension.m in Sources */,
 				106245CA1ACBF278002DE098 /* UIImageView+AFNetworking.m in Sources */,
@@ -974,9 +979,11 @@
 				106245BE1ACBF278002DE098 /* QBAssetsCollectionOverlayView.m in Sources */,
 				106245361ACBF151002DE098 /* XYZCellModel.m in Sources */,
 				108066291AF7862500FA07C5 /* ProgressLoader.m in Sources */,
+				10CA37C51B65C80B00C8DE96 /* XYZSegment.m in Sources */,
 				10B8B3A41ACAA55200D5DA49 /* UIView+Line.m in Sources */,
 				106245511ACBF257002DE098 /* UIScrollView+MJRefresh.m in Sources */,
 				10CE32F31AE28E560018E4C1 /* Photo.m in Sources */,
+				10CA37BB1B64BEED00C8DE96 /* XYZScroll.m in Sources */,
 				10B8B39E1ACA900000D5DA49 /* XYZPush.m in Sources */,
 				10B8B3B21ACAEF6B00D5DA49 /* NSString+Category.m in Sources */,
 				1062452E1ACBF137002DE098 /* BaseDetailViewController.m in Sources */,
@@ -985,20 +992,19 @@
 				10B8B35E1ACA7E3600D5DA49 /* AppDelegate.m in Sources */,
 				106245B61ACBF278002DE098 /* UIImage+KVNEmpty.m in Sources */,
 				106245351ACBF151002DE098 /* XYZCellManager.m in Sources */,
+				107EB8DF1B66386C0008F916 /* XYZView.m in Sources */,
 				10D81F761AE0B52A0076A24D /* RECommonFunctions.m in Sources */,
 				106245AE1ACBF278002DE098 /* AFURLRequestSerialization.m in Sources */,
 				106244F61ACBDE93002DE098 /* XYZViewController.m in Sources */,
+				10CA37BC1B64BEED00C8DE96 /* XYZScrollImage.m in Sources */,
 				106245CC1ACBF278002DE098 /* UIRefreshControl+AFNetworking.m in Sources */,
 				106C54B31AD4E99E0097D173 /* LocationCollection.m in Sources */,
 				106245AB1ACBF278002DE098 /* AFNetworkReachabilityManager.m in Sources */,
 				10B8B39B1ACA88D100D5DA49 /* XYZAppDelegate.m in Sources */,
 				106245BB1ACBF278002DE098 /* MBProgressHUD.m in Sources */,
-				106245141ACBED67002DE098 /* XYZButton.m in Sources */,
 				1062450E1ACBEAA4002DE098 /* XYZSearchDisplayView.m in Sources */,
 				1062452F1ACBF137002DE098 /* BaseRefreshViewController.m in Sources */,
-				106244FF1ACBE5BE002DE098 /* XYZSelfCustomButton.m in Sources */,
 				106245D01ACBF2DF002DE098 /* NSData+Encryption.m in Sources */,
-				106245171ACBEE78002DE098 /* XYZImageTimerScroll.m in Sources */,
 				106245391ACBF22F002DE098 /* XYZNetWork.m in Sources */,
 				106C548C1AD36CAD0097D173 /* GCDCollection.m in Sources */,
 				10B8B3A81ACAE3E800D5DA49 /* UIView+Accessory.m in Sources */,
@@ -1007,6 +1013,7 @@
 				106245C21ACBF278002DE098 /* QBAssetsCollectionViewLayout.m in Sources */,
 				106C549B1AD391C80097D173 /* RunTimeCollection.m in Sources */,
 				106245A81ACBF278002DE098 /* AFHTTPRequestOperation.m in Sources */,
+				10CA37BF1B64BF2C00C8DE96 /* XYZScrollChartView.m in Sources */,
 				106C54921AD383280097D173 /* NSOpertionCollection.m in Sources */,
 				106245AA1ACBF278002DE098 /* AFHTTPSessionManager.m in Sources */,
 				106C54951AD383390097D173 /* LockCollection.m in Sources */,
@@ -1018,7 +1025,6 @@
 				106245201ACBF0AB002DE098 /* XYZTableViewCell.m in Sources */,
 				106245B71ACBF278002DE098 /* UIImage+KVNImageEffects.m in Sources */,
 				106245301ACBF137002DE098 /* BaseViewController.m in Sources */,
-				106244FC1ACBE57D002DE098 /* XYZSwitch.m in Sources */,
 				1062454D1ACBF257002DE098 /* MJRefreshConst.m in Sources */,
 				10B8B3AC1ACAE51100D5DA49 /* JSBadgeView.m in Sources */,
 				106245AC1ACBF278002DE098 /* AFSecurityPolicy.m in Sources */,

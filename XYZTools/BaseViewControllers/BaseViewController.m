@@ -83,7 +83,7 @@
 //    icon.image = image;
 //    [view addSubview:icon];
 //    
-//    UILabel* label = [XYZToolsCommon labelWithFrame:CGRectMake(icon.xyzX1+10, 0, 200, view.xyzHeight) fontSize:13 color:[UIColor blackColor] content:title textAli:NSTextAlignmentLeft];
+//    UILabel* label = [XYZToolsCommon labelWithFrame:CGRectMake(icon.right+10, 0, 200, view.xyzHeight) fontSize:13 color:[UIColor blackColor] content:title textAli:NSTextAlignmentLeft];
 //    [view addSubview:label];
 //    
 //    [self separater:view x:label.xyzX y:view.xyzHeight-1];

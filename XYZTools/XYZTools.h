@@ -47,14 +47,11 @@
  */
 #import "XYZViewController.h"
 
-#import "XYZSwitch.h"
 #import "XYZSelectionIndicater.h"//选择指示器
 
-#import "XYZSelfCustomButton.h"
 #import "XYZButton.h"
 
 #import "XYZTimerAnimateView.h"
-#import "XYZImageScrollView.h"//轮播图
 
 #import "XYZAutoResizeView.h"//多个等高view，自动排版，自动调整高度，宽度固定
 #import "XYZCoverView.h"//覆盖层，可点击

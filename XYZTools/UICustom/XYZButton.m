@@ -1,326 +1,105 @@
 //
 //  XYZButton.m
-//  XYZCollection
+//  layout
 //
-//  Created by xieyan on 15/4/1.
+//  Created by xieyan on 15/7/24.
 //  Copyright (c) 2015年 xieyan. All rights reserved.
 //
 
 #import "XYZButton.h"
-
-@interface XYZButton ()
-@property(nonatomic,strong)UIImageView* coverImage;
-@property(nonatomic,strong)UILabel*coverLabel;
-@property(nonatomic,strong)UIButton*button;
-
-
-/**
- *  image and text button proporty
- */
-@property(nonatomic)BOOL isImageTextButton;
-@property(nonatomic)BOOL isCentralContentButton;
-@property(nonatomic)CGFloat imageWidth;
-@property(nonatomic)CGFloat buttonHeight;
+@interface XYZButton (){
+    BOOL _isSelected;
+}
+@property(nonatomic,strong) void (^callBack) (BOOL isSelected,UIView* theView);
+@property(nonatomic,strong) void (^layOut) (UIView* theView);
+@property(nonatomic,strong) void (^touched) (BOOL downOrUp,UIView* theView);
+@property(nonatomic,strong) void (^messageSet) (BOOL isSelected,UIView* theView,id message);
 @end
 @implementation XYZButton
 
-/**
- *  自动居中，大小固定，右图，左label
- */
-
-
-
-
-/**
- *  自动居中，大小固定，左图，右label
- */
-
-+(instancetype)ButtonCentralContentWithFrame:(CGRect)frame imageWidth:(CGFloat)width{
-    return [[self alloc] initWithFrame:frame imageWidth:width];
-}
-
-
--(instancetype)initWithFrame:(CGRect)frame imageWidth:(CGFloat)width{
-    self=[super initWithFrame:frame];
+-(instancetype)init{
+    self = [super init];
     if (self) {
-        _isCentralContentButton=YES;
-        self.isImageTextButton = NO;
-        _isSelected            = NO;
-        _xyzImageSelected      = nil;
-        _delegate              = nil;
-        _xyzImage              = nil;
-        self.callback          = nil;
-        self.xyzInset          = UIEdgeInsetsZero;
-        self.coverImage.xyzWidth=width;
-        self.coverImage.contentMode=UIViewContentModeCenter;
-        [self resizeCentralAdjustContent];
+        [self prepare];
     }
     return self;
 }
--(void)resizeCentralAdjustContent{
-    
-    self.coverImage.frame=CGRectMake(0, 0, self.coverImage.xyzWidth, self.xyzHeight);
-    CGFloat labelWidth = [self.coverLabel.text sizeWithFont:self.coverLabel.font].width;
-    self.coverLabel.frame=CGRectMake(0, 0, labelWidth, self.xyzHeight);
-    
-    self.coverImage.xyzX=self.xyzWidth/2-(self.coverImage.xyzWidth+self.coverLabel.xyzWidth)/2;
-    self.coverLabel.xyzX=self.coverImage.xyzX1;
-    
-}
-
-/**
- *  自动调整大小，左image 右label
- *
- */
-+(instancetype)buttonWithImageWidth:(CGFloat)imageWidth height:(CGFloat)buttonHeight 
-{
-    return [[self alloc] initWithImageWidth:imageWidth height:buttonHeight];
-}
-
--(instancetype)initWithImageWidth:(CGFloat)imageWidth height:(CGFloat)buttonHeight 
-{
-    self=[super initWithFrame:CGRectMake(0, 0, imageWidth, buttonHeight)];
+-(id)initWithCoder:(NSCoder *)aDecoder{
+    self = [super initWithCoder:aDecoder];
     if (self) {
-        self.imageWidth        = imageWidth;
-        self.buttonHeight      = buttonHeight;
-        self.isImageTextButton = YES;
-        _isCentralContentButton=NO;
-        self.coverImage        = nil;
-        self.coverLabel        = nil;
-        _isSelected            = NO;
-        _xyzImageSelected      = nil;
-        _delegate              = nil;
-        _xyzImage              = nil;
-        self.callback          = nil;
-        self.xyzInset          = UIEdgeInsetsZero;
-        
+        [self prepare];
     }
     return self;
 }
--(void)layoutImageText{
-    self.coverImage.frame=CGRectMake(self.xyzInset.left, self.xyzInset.top, self.imageWidth, self.buttonHeight-self.xyzInset.bottom-self.xyzInset.top);
-    CGFloat width =[self.xyzTitleText sizeWithFont:self.coverLabel.font].width;
-    self.coverLabel.frame = CGRectMake(self.coverImage.xyzX1, self.xyzInset.top, width, self.buttonHeight-self.xyzInset.bottom-self.xyzInset.top);
-    self.bounds=CGRectMake(0, 0, self.coverLabel.xyzX1+self.xyzInset.right, self.buttonHeight);
-}
-
-/**
- *  普通
- */
-+(instancetype)buttonWithFrame:(CGRect)frame callBack:(void(^)(BOOL isSelected, int tag))callBack{
-    return [[self alloc] initWithFrame:frame callBack:callBack];
-}
--(instancetype)initWithFrame:(CGRect)frame callBack:(void(^)(BOOL isSelected, int tag))callBack{
-    self=[super initWithFrame:frame];
+-(instancetype)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
     if (self) {
-        self.isImageTextButton = NO;
-        _isCentralContentButton=NO;
-        self.coverImage        = nil;
-        self.coverLabel        = nil;
-        _isSelected            = NO;
-        _xyzImageSelected      = nil;
-        _xyzImage              = nil;
-        _delegate              = nil;
-        self.callback          = callBack;
-        self.xyzInset          = UIEdgeInsetsZero;
+        [self prepare];
     }
     return self;
 }
-
-
-
-
-
-/**
- *  公用
- *
- *  @param callback <#callback description#>
- */
--(void)setCallback:(void (^)(BOOL, int))callback{
-    if (!_button) {
-        _button = [UIButton buttonWithType:UIButtonTypeCustom];
-        _button.frame=self.bounds;
-        [_button addTarget:self action:@selector(callbackInside) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:_button];
-    }
-    _callback=callback;
-}
--(void)setDelegate:(id<XYZButtonDelegate>)delegate{
-    if (!_button) {
-        _button = [UIButton buttonWithType:UIButtonTypeCustom];
-        _button.frame=self.bounds;
-        [_button addTarget:self action:@selector(callbackInside) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:_button];
-    }
-    _delegate=delegate;
-}
--(void)setFrame:(CGRect)frame{
-    [super setFrame:frame];
-    if (self.isImageTextButton) {
-        return;
-    }
-    if (self.isCentralContentButton) {
-        [self resizeCentralAdjustContent];
-        return;
-    }
-    if (self.coverImage) {
-        self.coverImage.frame=self.bounds;
-    }
-    if (self.coverLabel) {
-        self.coverLabel.frame=self.bounds;
-    }
-}
--(void)setXyzInset:(UIEdgeInsets)xyzInset{
-    _xyzInset            = xyzInset;
-    CGRect frame      = self.bounds;
-    frame.origin.x    += xyzInset.left;
-    frame.origin.y    += xyzInset.top;
-    frame.size.width  -= xyzInset.left+xyzInset.right;
-    frame.size.height -= xyzInset.bottom+xyzInset.top;
-    if (self.isImageTextButton) {
-        [self layoutImageText];
-    }else if(self.isCentralContentButton){
-        
-    }else{
-        if (self.coverImage) {
-            self.coverImage.frame=frame;
-        }
-        if (self.coverLabel) {
-            self.coverLabel.frame=frame;
-        }
-    }
-}
--(void)setBounds:(CGRect)bounds{
-    [super setBounds:bounds];
-    if (self.isImageTextButton) {
-        return;
-    }
-    if (self.isCentralContentButton) {
-        [self resizeCentralAdjustContent];
-        return;
-    }
-    if (self.coverImage) {
-        self.coverImage.frame=bounds;
-    }
-    if (self.coverLabel) {
-        self.coverLabel.frame=bounds;
-    }
-}
--(void)setIsSelected:(BOOL)isSelected{
-    if (self.xyzImageSelected) {
-        self.coverImage.image=isSelected?self.xyzImageSelected:self.xyzImage;
-    }
-    
-    _isSelected=isSelected;
-}
--(void)callbackInside{
-    if (self.xyzImageSelected) {
-        self.isSelected=!self.isSelected;
-    }
-    if (self.callback) {
-        self.callback(self.isSelected,self.tag);
-    }
-    if (self.delegate) {
-        [self.delegate XYZButtonCallBack:self.isSelected tag:self.tag];
-    }
+-(void)prepare{
+    _isSelected = NO;
 }
 
 
 
 
-
--(void)checkImageNil{
-    if (_coverImage==nil) {
-        _coverImage = [[UIImageView alloc] initWithFrame:self.bounds];
-        [self addSubview:_coverImage];
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    if (self.touched) {
+        self.touched(YES,self);
     }
 }
--(void)setXyzImage:(UIImage *)xyzImage{
-    [self checkImageNil];
-    if (_xyzImageSelected==nil) {
-        self.coverImage.image=xyzImage;
-    }else{
-        if (!_isSelected) {
-            self.coverImage.image=xyzImage;
-        }
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    if (self.touched) {
+        self.touched(NO,self);
     }
-    _xyzImage=xyzImage;
-}
--(void)setXyzImageSelected:(UIImage *)xyzImageSelected{
-    [self checkImageNil];
-    if (_xyzImage==nil) {
-        //        self.coverImage.image=xyzImageSelected;
-        
-    }else{
-        if (_isSelected) {
-            self.coverImage.image=xyzImageSelected;
-        }
-    }
-    _xyzImageSelected=xyzImageSelected;
-}
--(void)setXyzImageContentMode:(UIViewContentMode)xyzContentMode{
-    _xyzImageContentMode=xyzContentMode;
-    [self checkImageNil];
-    self.coverImage.contentMode=xyzContentMode;
-}
--(UIImageView *)coverImage{
-    [self checkImageNil];
-    return _coverImage;
-}
-
-
-
--(UILabel *)coverLabel{
-    [self checkLabelNil];
-    return _coverLabel;
-}
-
--(void)checkLabelNil{
-    if (_coverLabel==nil) {
-        _coverLabel=[[UILabel alloc] initWithFrame:self.bounds];
-        //        _coverLabel.numberOfLines=0;
-        _coverLabel.textColor=[UIColor blackColor];
-        _coverLabel.textAlignment=NSTextAlignmentCenter;
-        [self addSubview:_coverLabel];
-        
+    if (self.callBack) {
+        _isSelected = !_isSelected;
+        self.callBack(_isSelected, self);
     }
 }
--(void)setXyzTitleFont:(float)xyzFont{
-    _xyzTitleFont=xyzFont;
-    [self checkLabelNil];
-    self.coverLabel.font=[UIFont systemFontOfSize:xyzFont];
-    if (self.isImageTextButton) {
-        [self layoutImageText];
-    }else if (self.isCentralContentButton){
-        [self resizeCentralAdjustContent];
-    }else{
-        
-    }
-}
--(void)setXyzTitleColor:(UIColor *)xyzTitleColor{
-    _xyzTitleColor=xyzTitleColor;
-    [self checkLabelNil];
-    self.coverLabel.textColor=xyzTitleColor;
-    
-}
--(void)setXyzTitleAlignment:(NSTextAlignment)xyzAlignment{
-    _xyzTitleAlignment=xyzAlignment;
-    [self checkLabelNil];
-    self.coverLabel.textAlignment=xyzAlignment;
-}
--(void)setXyzTitleText:(NSString *)xyzTitleText{
-    _xyzTitleText=xyzTitleText;
-    [self checkLabelNil];
-    self.coverLabel.text=xyzTitleText;
-    if (self.isImageTextButton) {
-        [self layoutImageText];
-    }else if (self.isCentralContentButton){
-        [self resizeCentralAdjustContent];
-    }else{
-        
+-(void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{
+    if (self.touched) {
+        self.touched(NO,self);
     }
 }
 
 
 
+-(void)layoutSubviews{
+    [super layoutSubviews];
+    if (self.layOut) {
+        self.layOut(self);
+    }
+}
+
+
+-(void)setMessage:(id)message{
+    [self willChangeValueForKey:@"message"];
+    _message = message;
+    if (self.messageSet) {
+        self.messageSet(_isSelected,self,message);
+    }
+    [self didChangeValueForKey:@"message"];
+}
+
+
++(instancetype)new{
+    return [[self alloc] init];
+}
+-(instancetype)block_customUI:(void(^)(UIView* theView))customUI 
+                     callBack:(void(^)(BOOL isSelected,UIView* theView))callBack 
+                       layOut:(void(^)(UIView* theView))layOut 
+                      touched:(void(^)(BOOL isSelected, UIView* theView))touched 
+                   messgaeSet:(void(^)(BOOL isSelected,UIView* theView,id message))messageSet{
+    self.callBack = callBack;
+    self.layOut = layOut;
+    self.touched = touched;
+    self.messageSet = messageSet;
+    if (customUI) {
+        customUI(self);
+    }
+    return self;
+}
 @end

@@ -22,19 +22,19 @@
 }
 -(void)xyzSeparaterLeft:(CGFloat)left right:(CGFloat)right top:(CGFloat)top bottom:(CGFloat)bottom{
     if (left>1) {
-        UIView* view = [UIView xyzSeparaterX:0 Y:(self.xyzHeight-left)/2 H:left];
+        UIView* view = [UIView xyzSeparaterX:0 Y:(self.height-left)/2 H:left];
         [self addSubview:view];
     }
     if (right>1) {
-        UIView* view = [UIView xyzSeparaterX:self.xyzWidth-1 Y:(self.xyzHeight-right)/2 H:right];
+        UIView* view = [UIView xyzSeparaterX:self.width-1 Y:(self.height-right)/2 H:right];
         [self addSubview:view];
     }
     if (top>1) {
-        UIView* separ = [UIView xyzSeparaterX:(self.xyzWidth-top)/2 Y:0 W:top];
+        UIView* separ = [UIView xyzSeparaterX:(self.width-top)/2 Y:0 W:top];
         [self addSubview:separ];
     }
     if (bottom>1) {
-        UIView* separ = [UIView xyzSeparaterX:(self.xyzWidth-bottom)/2 Y:self.xyzHeight-1 W:bottom];
+        UIView* separ = [UIView xyzSeparaterX:(self.width-bottom)/2 Y:self.height-1 W:bottom];
         [self addSubview:separ];
     }
     

@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIAlertView (UIAlertViewCategory)
+@interface UIAlert : NSObject
 +(void)pushAlert:(NSString*)content;
 +(void)pushAlert:(NSString*)content confirm:(void(^)())confirm;
++(void)pushCancelAlert:(NSString*)content confirm:(void(^)())confirm;
 @end
+

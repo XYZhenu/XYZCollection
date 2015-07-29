@@ -48,7 +48,7 @@ __parma__ = __parma__>0.49?__parma__:0;
     font = font>0.49?font:16;
     
     self.xyzLabel.font=[UIFont systemFontOfSize:font];
-    self.xyzLabel.frame = CGRectMake(left, top, self.contentView.xyzWidth-left-right, 44);
+    self.xyzLabel.frame = CGRectMake(left, top, self.contentView.width-left-right, 44);
     self.xyzLabel.xyzTextAdjustHeight=dataDic[@"data"];
     
 }
