@@ -9,11 +9,13 @@
 #import "ViewController.h"
 #import "XYZButton.h"
 #import "XYZSegment.h"
+#import "XYZScroll.h"
 
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet XYZButton *testButton;
 @property (weak, nonatomic) IBOutlet XYZSegment *testSegment;
+@property (weak, nonatomic) IBOutlet XYZScroll *testScroll;
 @end
 
 @implementation ViewController
@@ -75,6 +77,31 @@
     self.testSegment.separatorColor = [UIColor greenColor];
     self.testSegment.separatorInset = UIEdgeInsetsMake(self.testSegment.width, self.testSegment.height, self.testSegment.width, self.testSegment.height);
     
+    
+    
+    
+    
+    [self.testScroll set_createUI:^(UIView *theView) {
+        LabelCreate(100)
+        label_100.backgroundColor = [UIColor colorWithRed:0.191 green:0.534 blue:1.000 alpha:1.000];
+        label_100.textColor = [UIColor whiteColor];
+        label_100.textAlignment = NSTextAlignmentCenter;
+        theView.backgroundColor = [UIColor colorWithRed:1.000 green:0.689 blue:0.336 alpha:1.000];
+        
+    } layOut:^(UIView *theView) {
+        Label(100).frame = CGRectMake(0, 0, theView.width, 30);
+        
+    } indicatorRect:nil callBack:^(NSInteger index, UIView *theView, id message) {
+        
+    } messgaeSet:^(NSInteger index, UIView *theView, id message) {
+        Label(100).text = message;
+    }];
+    
+    
+    
+    self.testScroll.messageArray = @[@"first",@"second",@"third"];
+    self.testScroll.enableIndicator=YES;
+    self.testScroll.enableTimer = YES;
     
     // Do any additional setup after loading the view, typically from a nib.
 }

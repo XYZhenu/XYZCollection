@@ -46,6 +46,7 @@
 -(void)prepare{
     _currentPage = 0;
     _scrollInterval = 4;
+    _animateInterval = 0.6;
     _enableInfiniteScroll = YES;
     _enableIndicator = NO;
     _enableTimer = NO;
@@ -82,7 +83,7 @@
             frame.origin.x+=self.frame.origin.x;
             frame.origin.y+=self.frame.origin.y;
         }else{
-            frame = CGRectMake(self.frame.origin.x, self.frame.size.height-20, self.frame.size.width, 20);
+            frame = CGRectMake(self.frame.origin.x, self.frame.origin.y+self.frame.size.height-20, self.frame.size.width, 20);
         }
         self.pageControl.frame = frame;
         [self.superview addSubview:self.pageControl];
@@ -97,6 +98,12 @@
     _layOut = layOut;
     [self layoutIfNeeded];
 }
+
+
+
+
+
+
 /**
  *  指示器有关
  *
@@ -137,6 +144,7 @@
     if (_enableIndicator==enableIndicator) {
         return;
     }
+    _enableIndicator = enableIndicator;
     if (enableIndicator) {
         self.pageControl.numberOfPages = self.messageArray.count;
         self.pageControl.currentPage = _currentPage;
@@ -241,7 +249,7 @@
     }else{
         _enableTimer = enableTimer;
         if (_enableTimer) {
-            [self enableTimer];
+            [self startTimer];
         }else{
             [self stopTimer];
         }
@@ -377,8 +385,6 @@
 
 
 
-
-
 -(void)setBackgroundColor:(UIColor *)backgroundColor{
     [super setBackgroundColor:backgroundColor];
     for (UIView* view in _cellArray) {
@@ -398,11 +404,13 @@
     return [[self alloc] init];
 }
 -(instancetype)set_createUI:(void(^)(UIView* theView))createUI
-                       layOut:(void(^)(UIView* theView))layOut 
-                     callBack:(void(^)(NSInteger index,UIView* theView,id message))callBack 
-                   messgaeSet:(void(^)(NSInteger index,UIView* theView,id message))messageSet{
+                     layOut:(void(^)(UIView* theView))layOut
+              indicatorRect:(CGRect(^)(CGRect bound))indicatorRect
+                   callBack:(void(^)(NSInteger index,UIView* theView,id message))callBack
+                 messgaeSet:(void(^)(NSInteger index,UIView* theView,id message))messageSet{
     self.callBack = callBack;
     self.layOut = layOut;
+    self.indicatorRect = indicatorRect;
     self.messageSet = messageSet;
     if (createUI) {
         for (UIView* view in _cellArray) {
