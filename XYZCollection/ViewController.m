@@ -99,9 +99,10 @@
     
     
     
-    self.testScroll.messageArray = @[@"first",@"second",@"third"];
+    self.testScroll.messageArray = @[@"first",@"second"];
     self.testScroll.enableIndicator=YES;
     self.testScroll.enableTimer = YES;
+    self.testScroll.enableInfiniteScroll = NO;
     
     // Do any additional setup after loading the view, typically from a nib.
 }

@@ -44,6 +44,7 @@
     return self;
 }
 -(void)prepare{
+    self.bounces=NO;
     _currentPage = 0;
     _scrollInterval = 4;
     _animateInterval = 0.6;
@@ -65,7 +66,11 @@
 }
 -(void)layoutSubviews{
     [super layoutSubviews];
-    self.contentSize = CGSizeMake(self.frame.size.width*3, self.frame.size.height);
+    if (!self.enableInfiniteScroll && self.messageArray.count==2) {
+        self.contentSize = CGSizeMake(self.frame.size.width*2, self.frame.size.height);
+    }else{
+        self.contentSize = CGSizeMake(self.frame.size.width*3, self.frame.size.height);
+    }
     for (int i=0; i<3; i++) {
         UIView* view = _cellArray[i];
         view.frame = CGRectMake(i * CGRectGetWidth(self.frame), 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
@@ -163,9 +168,14 @@
         return;
     }
     [self willChangeValueForKey:@"messageArray"];
+
+    [self resetData:messageArray];
+    
+    [self didChangeValueForKey:@"messageArray"];
+}
+-(void)resetData:(NSArray*)messageArray{
     [self stopTimer];
     _messageArray = messageArray;
-    
     
     _currentPage = 0;
     if (_pageControl) {
@@ -187,10 +197,24 @@
             self.contentOffset = CGPointMake(0, 0);
             self.scrollEnabled = NO;
             if (self.messageSet) {
-                self.messageSet(0,_cellArray[0],self.messageArray[0]);
+                self.messageSet(0,_cellArray[0],messageArray[0]);
             }
             break;
         }
+        case 2:
+            if (!self.enableInfiniteScroll) {
+                self.enableTimer = NO;
+                
+                self.contentOffset = CGPointZero;
+                self.scrollEnabled = YES;
+                self.contentSize = CGSizeMake(self.frame.size.width*2, self.frame.size.height);
+                if (self.messageSet) {
+                    self.messageSet(0,_cellArray[0],messageArray[0]);
+                    self.messageSet(1,_cellArray[1],messageArray[1]);
+                }
+                
+                break;
+            }
         default:{
             [self reloadData];
             self.scrollEnabled = YES;
@@ -201,8 +225,6 @@
         }
     }
     [self layoutIfNeeded];
-    
-    [self didChangeValueForKey:@"messageArray"];
 }
 -(void)reloadData{
     self.contentOffset = CGPointMake(CGRectGetWidth(self.frame), 0);
@@ -214,7 +236,13 @@
     }
 }
 
-
+-(void)setEnableInfiniteScroll:(BOOL)enableInfiniteScroll{
+    if (_enableInfiniteScroll==enableInfiniteScroll) {
+        return;
+    }
+    _enableInfiniteScroll = enableInfiniteScroll;
+    [self resetData:_messageArray];
+}
 
 
 
@@ -244,6 +272,12 @@
     }
 }
 -(void)setEnableTimer:(BOOL)enableTimer{
+    if (!self.enableInfiniteScroll) {
+        _enableTimer = NO;
+        [self stopTimer];
+    }
+    
+    
     if (_enableTimer == enableTimer) {
         return;
     }else{
@@ -300,7 +334,25 @@
     if (_pageControl) {
         _pageControl.currentPage = currentPage;
     }
-    [self reloadData];
+    if (!self.enableInfiniteScroll && self.messageArray.count==2) {
+        [self disableUserInteraction];
+        [UIView animateWithDuration:self.animateInterval animations:^{
+            CGPoint point;
+            if (currentPage==0) {
+                point  = CGPointMake(0, 0);
+            }else{
+                point = CGPointMake(CGRectGetWidth(self.frame), 0);
+            }
+            self.contentOffset = point;
+        } completion:^(BOOL finished) {
+            if (finished) {
+                [self enableUserInteraction];
+            }
+        }];
+    }else{
+        [self reloadData];
+    }
+    
 }
 - (void)showNextPage
 {
@@ -325,15 +377,33 @@
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    if (scrollView.contentOffset.x >= 2 * CGRectGetWidth(self.frame)) {
-        [self showNextPage];
+    if (!self.enableInfiniteScroll && self.messageArray.count==2) {
+        if (_pageControl) {
+            CGFloat off = scrollView.contentOffset.x;
+            NSLog(@"%f",off);
+            if (scrollView.contentOffset.x >= CGRectGetWidth(self.frame)/2) {
+                _pageControl.currentPage = 1;
+            }else{
+                _pageControl.currentPage = 0;
+            }
+            
+        }
+
+    }else{
+        if (scrollView.contentOffset.x >= 2 * CGRectGetWidth(self.frame)) {
+            [self showNextPage];
+        }
+        else if (scrollView.contentOffset.x <= 0) {
+            [self showLastPage];
+        }
+        if (self.enableTimer) {
+            [self startTimer];
+        }
     }
-    else if (scrollView.contentOffset.x <= 0) {
-        [self showLastPage];
-    }
-    if (self.enableTimer) {
-        [self startTimer];
-    }
+    
+    
+    
+
 }
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {

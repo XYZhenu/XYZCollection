@@ -13,7 +13,7 @@
 
 
 
-//@property(nonatomic,assign)BOOL enableInfiniteScroll;//可以循环滚动默认开启
+@property(nonatomic,assign)BOOL enableInfiniteScroll;//可以循环滚动默认开启
 
 @property(atomic,strong)NSArray* messageArray;//设置内容
 @property(nonatomic,assign)NSInteger currentPage;
