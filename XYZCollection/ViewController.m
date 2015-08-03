@@ -99,7 +99,7 @@
     
     
     
-    self.testScroll.messageArray = @[@"first",@"second"];
+    self.testScroll.messageArray = @[@"first",@"second",@"third"];
     self.testScroll.enableIndicator=YES;
     self.testScroll.enableTimer = YES;
     self.testScroll.enableInfiniteScroll = NO;
