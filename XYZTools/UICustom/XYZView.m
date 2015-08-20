@@ -7,7 +7,38 @@
 //
 
 #import "XYZView.h"
+#import <objc/runtime.h>
+@implementation UIView (XYZMessage)
 
+static char xyzdelegatekey;
+
+-(void)setXyzDelegate:(id<XYZDelegate>)xyzDelegate{
+    objc_setAssociatedObject(self, &xyzdelegatekey, xyzDelegate, OBJC_ASSOCIATION_ASSIGN);
+}
+-(id<XYZDelegate>)xyzDelegate{
+    return objc_getAssociatedObject(self, &xyzdelegatekey);
+}
+
+
+
+
+
+static char messageKey;
+-(void)setMessage:(id)message{
+    objc_setAssociatedObject(self, &messageKey, message, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [self xyzMessageSet:message];
+}
+-(id)message{
+    return  objc_getAssociatedObject(self, &messageKey);
+}
+-(void)xyzMessageSet:(id)message{}
+
+
+
++(CGSize)xyzSizeWithMessage:(id)message refSize:(CGSize)size{
+    return CGSizeZero;
+}
+@end
 @implementation XYZView
 -(instancetype)init{
     self = [super init];
