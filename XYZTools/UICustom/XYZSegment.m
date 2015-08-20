@@ -12,6 +12,7 @@
 }
 @property(nonatomic,strong)void(^createUI)(XYZView* theView,NSInteger index);
 @property(nonatomic,strong)void(^layOut)(XYZView* theView,NSInteger index);
+@property(nonatomic,strong)void(^messageSet)(XYZView* theView,NSInteger index);
 @property(nonatomic,strong)void(^selectState)(XYZView* theView,BOOL selected);
 @property(nonatomic,strong)void(^callBack)(NSInteger index);
 @end
@@ -75,10 +76,12 @@
     return [[self alloc] init];
 }
 -(instancetype)set_Num:(NSInteger)number
-                createUI:(void(^)(XYZView* theView,NSInteger index))createUI
-                  layOut:(void(^)(XYZView* theView,NSInteger index))layOut
-             selectState:(void(^)(XYZView* theView,BOOL selected))selectState
-                callBack:(void(^)(NSInteger index))callBack{
+              createUI:(void(^)(XYZView* theView,NSInteger index))createUI
+                layOut:(void(^)(XYZView* theView,NSInteger index))layOut
+           selectState:(void(^)(XYZView* theView,BOOL selected))selectState
+              callBack:(void(^)(NSInteger index))callBack
+            messageSet:(void(^)(XYZView* theView,NSInteger index))messageSet
+{
     
     
     NSAssert(number>1, @"最少两个");
@@ -99,7 +102,6 @@
     
     for (int i=0; i<number; i++) {
         XYZView* view = [[XYZView alloc] initWithFrame:CGRectMake(i*width, 0, width, self.frame.size.height)];
-        self.createUI(view,i);
         [self addSubview:view];
         
         UIButton* btn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -128,7 +130,7 @@
             }
         }
     }
-    
+    self.messageSet = messageSet;
     [self setNeedsLayout];
     return self;
 }
@@ -166,6 +168,14 @@
     self.selectedIndex = index;
     if (self.callBack) {
         self.callBack(index);
+    }
+}
+-(void)xyzMessageSet:(id)message{
+    if (self.messageSet) {
+        for (int i=0; i<_cellArray.count; i++) {
+            XYZView* view = _cellArray[i];
+            self.messageSet(view,i);
+        }
     }
 }
 @end

@@ -15,10 +15,11 @@
 
 
 -(instancetype)set_Num:(NSInteger)number
-                createUI:(void(^)(XYZView* theView,NSInteger index))createUI 
-                  layOut:(void(^)(XYZView* theView,NSInteger index))layOut
-             selectState:(void(^)(XYZView* theView,BOOL selected))selectState 
-                callBack:(void(^)(NSInteger index))callBack;
+              createUI:(void(^)(XYZView* theView,NSInteger index))createUI
+                layOut:(void(^)(XYZView* theView,NSInteger index))layOut
+           selectState:(void(^)(XYZView* theView,BOOL selected))selectState
+              callBack:(void(^)(NSInteger index))callBack
+            messageSet:(void(^)(XYZView* theView,NSInteger index))messageSet;
 
 -(void)selectedIndexWithCallBack:(NSInteger)index;
 @end
